@@ -1,0 +1,32 @@
+body{
+    background: url('../img/bgpattern.png');
+
+}
+
+#search-box{
+    background:#fff;
+    box-shadow: 0 0 5px #888888;
+    padding:50px 10px;
+}
+
+#header-box {
+    margin-top:10px;
+    min-height:90px;
+}
+
+
+#header-box > .container-fluid,#search-box > .container-fluid{
+    max-width:1200px;
+}
+
+#header-box ul{
+}
+#header-box li{
+    margin:0 10px;
+    float:right;
+    list-style: none;
+}
+
+#header-box nav{
+    font-size:18px;
+}
