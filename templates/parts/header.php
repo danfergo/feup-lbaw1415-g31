@@ -14,18 +14,35 @@
 
         <div id="header-box">
             <div class="container-fluid">
-                <div class="col-xs-3">
-                    <span style="font-size:36px;border:1px solid;">LOGO HERE</span>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <span style="font-size:36px;border:1px solid;">LOGO HERE</span>
+                    </div>
+                    <div class="col-xs-9">
+                        <nav>
+                            <ul class="inline-clean">                            
+                                <li><a href="#Logout">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout</a></li>
+                                <li><a href="#Archive">  <span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a></li>
+                               <!-- <li><a href="#Messages">  <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> Mensagens</a></li> -->
+                                <li><a href="dashboard.php">  <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Arquivo </a></li>
+                                <li><a href="newauction.php">
+                                        <input type="button" class="btn btn-primary" aria-expanded="false" value="Vender">
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
-                <div class="col-xs-9">
-                    <nav>
-                        <ul class="inline-clean">                            
-                            <li><a href="#Logout">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout</a></li>
-                            <li><a href="#Notifications">  <span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a></li>
-                            <li><a href="#Messages">  <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> Mensagens</a></li>
-                            <li><a href="dashboard.php">  <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Painel</a></li>
-                        </ul>
-                    </nav>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="base-container lower">asd</div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="base-container lower">asd</div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="base-container lower">asd</div>
+                    </div>
                 </div>
             </div>
         </div>
