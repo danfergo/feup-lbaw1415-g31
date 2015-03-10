@@ -19,10 +19,11 @@
                 </div>
                 <div class="col-xs-9">
                     <nav>
-                        <ul>                            
+                        <ul class="inline-clean">                            
                             <li><a href="#Logout">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout</a></li>
-                            <li><a href="#Notifications">  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span></a></li>
+                            <li><a href="#Notifications">  <span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a></li>
                             <li><a href="#Messages">  <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> Mensagens</a></li>
+                            <li><a href="dashboard.php">  <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Painel</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -47,3 +48,12 @@
                 <button class="btn btn-primary col-xs-2" type="button">Pesquisar</button>
             </div>
         </div>
+        <div id="page-wrapper">
+            <nav id="breadcrumbs">
+                <ul class="inline-clean">                            
+                    <li><a href="index.php">  <span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+                    <li><a href="#Notifications"> Level1 </a></li>
+                    <li><a href="#Messages"> Level2 </a></li>
+                </ul>
+                <div class="clearfix"> </div>
+            </nav>
