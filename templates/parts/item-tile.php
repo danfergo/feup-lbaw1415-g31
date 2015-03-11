@@ -9,12 +9,8 @@
         <span style="float:right;text-align: right;">
             <span class="glyphicon glyphicon-flag" aria-hidden="true"></span> 392,23€ <br>
             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 5.000,00€ <br>
-            <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> 5,00€&nbps;
+            <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> 5,00€
         </span>
-
-
-
-
 
     </div>
 
