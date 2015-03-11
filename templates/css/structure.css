@@ -3,7 +3,7 @@ body{
 
 }
 
-#header-box > .container-fluid,#search-box > .container-fluid, #page-wrapper{
+.main-wapper{
     max-width:1200px;
     margin:0 auto;
 }
@@ -86,4 +86,13 @@ ul.inline-clean > li {
 
 
 
-/** **/
+
+
+/** footer **/
+
+
+.item-tile {
+    margin:5px;
+    float:left;
+    
+}
