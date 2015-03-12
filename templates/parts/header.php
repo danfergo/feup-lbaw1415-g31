@@ -27,22 +27,22 @@
 
 
         <div id="header-box">
-            <div class="container-fluid main-wapper">
+            <div class="container-fluid main-wapper" >
                 <div class="row">
                     <div class="col-xs-3">
                         <span style="font-size:36px;border:1px solid;">LOGO HERE</span>
                     </div>
                     <div class="col-xs-9">
-                        <nav>
+                        <nav style="padding-top:25px;">
                             <ul class="inline-clean">                            
-                                <li><a href="#Logout">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout</a></li>
+                                <li><a href="#Logout">  <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
                                 <li><a href="#Archive">  <span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a></li>
                                <!-- <li><a href="#Messages">  <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> Mensagens</a></li> -->
-                                <li><a href="dashboard.php">  <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Arquivo </a></li>
-                                <li><a href="newauction.php">
-                                        <input type="button" class="btn btn-primary" aria-expanded="false" value="Vender">
-                                    </a>
-                                </li>
+                                <li><a href="dashboard.php">  <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></a></li>
+                                <!-- <li><a href="newauction.php">
+                                         <input type="button" class="btn btn-primary" aria-expanded="false" value="Vender">
+                                     </a>
+                                 </li>-->
                             </ul>
                         </nav>
                     </div>
@@ -58,24 +58,58 @@
 
                     </div>
                 </div>-->
+
             </div>
         </div>
 
-        <div class="base-container lower">
-<!--
-            <select class="selectpicker" multiple data-max-options="2" data-live-search="true">
-                <optgroup label="Condiments" data-max-options="2">
-                    <option>Mustard</option>
-                    <option>Ketchup</option>
-                    <option>Relish</option>
-                </optgroup>
-                <optgroup label="Breads" data-max-options="2">
-                    <option>Plain</option>
-                    <option>Steamed</option>
-                    <option>Toasted</option>
-                </optgroup>
-            </select>-->
+        <div class="base-container lower" style="margin:0 50px; margin-bottom:10px;">
+            <div class="base-container upper-inside-lower" style="width:400px;margin-left:auto;margin-right:auto;">
+                col1<br>
+                col1<br>
+
+                col1<br>
+
+                col1<br>
+
+                col1<br>
+
+            </div>
+            <div class="base-container upper-inside-lower" style="width:400px;margin-left:auto;margin-right:auto;">
+                col1<br>
+                col1<br>
+
+                col1<br>
+
+                col1<br>
+
+                col1<br>
+
+            </div>
+            <div class="base-container upper-inside-lower" style="width:400px;margin-left:auto;margin-right:auto;">
+                col1<br>
+                col1<br>
+
+                col1<br>
+
+                col1<br>
+
+                col1<br>
+
+            </div>
+            <div class="base-container upper-inside-lower" style="width:400px;margin-left:auto;margin-right:auto;">
+                col1<br>
+                col1<br>
+
+                col1<br>
+
+                col1<br>
+
+                col1<br>
+
+            </div>
         </div>
+
+        <div class="clearfix"> </div>
         <div id="search-box">
             <div class="container-fluid main-wapper">
                 <div class="col-xs-10">
@@ -83,7 +117,7 @@
                         <input type="text" class="form-control" aria-label="...">
                         <div class="input-group-btn">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Categoria <span class="caret"></span></button>
-                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu" >
                                 <li><a href="#">Categoria 1</a></li>
                                 <li><a href="#">Categoria 2</a></li>
                                 <li><a href="#">Categoria 3</a></li>
@@ -102,5 +136,4 @@
                     <li><a href="#Notifications"> Level1 </a></li>
                     <li><a href="#Messages"> Level2 </a></li>
                 </ul>
-                <div class="clearfix"> </div> 
             </nav>
