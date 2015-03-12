@@ -47,66 +47,18 @@
                         </nav>
                     </div>
                 </div>
-                <!--<div class="row">
-                    <div class="col-xs-4">
-                        <div class="base-container lower">asd</div>
-                    </div>
-                    <div class="col-xs-4">
-                        <div class="base-container lower">asd</div>
-                    </div>
-                    <div class="col-xs-4">
-
-                    </div>
-                </div>-->
 
             </div>
         </div>
 
         <div class="base-container lower" style="margin:0 50px; margin-bottom:10px;">
-            <div class="base-container upper-inside-lower" style="width:400px;margin-left:auto;margin-right:auto;">
-                col1<br>
-                col1<br>
+            <?php for($i = 0; $i < 5 ; $i++){
+                                include 'parts/notification-msg.php';
 
-                col1<br>
-
-                col1<br>
-
-                col1<br>
-
-            </div>
-            <div class="base-container upper-inside-lower" style="width:400px;margin-left:auto;margin-right:auto;">
-                col1<br>
-                col1<br>
-
-                col1<br>
-
-                col1<br>
-
-                col1<br>
-
-            </div>
-            <div class="base-container upper-inside-lower" style="width:400px;margin-left:auto;margin-right:auto;">
-                col1<br>
-                col1<br>
-
-                col1<br>
-
-                col1<br>
-
-                col1<br>
-
-            </div>
-            <div class="base-container upper-inside-lower" style="width:400px;margin-left:auto;margin-right:auto;">
-                col1<br>
-                col1<br>
-
-                col1<br>
-
-                col1<br>
-
-                col1<br>
-
-            </div>
+                
+            }   
+            ?>
+            
         </div>
 
         <div class="clearfix"> </div>
@@ -126,10 +78,10 @@
                         </div><!-- /btn-group -->
                     </div><!-- /input-group -->
                 </div>
-                <button class="btn btn-primary col-xs-2" type="button">Pesquisar</button>
+                <a href="search.php"><button class="btn btn-primary col-xs-2" type="button">Pesquisar</button></a>
             </div>
         </div>
-        <div id="page-wrapper" class="main-wapper">
+        <div id="page-wrapper" class="fluid-container main-wapper">
             <nav id="breadcrumbs">
                 <ul class="inline-clean">                            
                     <li><a href="index.php">  <span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
@@ -137,3 +89,4 @@
                     <li><a href="#Messages"> Level2 </a></li>
                 </ul>
             </nav>
+            
