@@ -66,7 +66,6 @@ ul.inline-clean > li {
 
 .base-container {
     border-radius:3px;
-    padding:5px;
 }
 
 .base-container.upper {
@@ -79,27 +78,38 @@ ul.inline-clean > li {
     background: rgba(0,0,0,0.12);
 }
 
-.base-container.upper-inside-lower{
-    margin:10px;
-    box-shadow: 0 0 5px #888;
-    background: rgba(255,255,255,0.95);
-
-}
-
-
 #page-wrapper > .container-fluid > div{
     padding:0;
 }
 
 
+.notification .options {
+    text-align:right;
+}
 
-
+.notification .options > div {
+    display:inline-block;
+}
 
 /** footer **/
 
 
 .item-tile {
-    margin:5px;
+    margin:13px;
     float:left;
-    
+}
+
+
+/** bootstrap expansion **/
+
+.input-xs {
+    height: 22px;
+    padding: 5px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+#notifications-hidder{
+    transition: all 5ms;
 }

@@ -1,12 +1,12 @@
-
 <div class="notification base-container upper" style="width:600px;margin:10px auto;">
     <div class="content" style="float:left;">
-        <img src="img/item-prev3.jpg" width="150" height="150" style="height:212px;border-top-left-radius: 3px; border-bottom-left-radius: 3px;">
+        <img src="img/item-prev2.jpg" width="150" height="150" style="border-top-left-radius: 3px; border-bottom-left-radius: 3px;">
     </div>
     <div class="content" style="margin-left:150px;">
-        <div class="details" style="height:91px;padding:3px;padding:0 3px; padding-top:7px; box-shadow: 0 -3px 5px #bbb inset; background:#efefef;border-top-right-radius: 3px;">
+        <div class="details" style="height:116px;padding:1px 3px;">
 
             <b>Café xpto à venda no porto</b>
+            <br><br>
             <div></div>
             <span class="glyphicon glyphicon-clock" aria-hidden="true"></span>faltam 10m </span>
 
@@ -16,20 +16,11 @@
                 <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> 5,00€
             </span>
 
-        </div>
-        <div class="new" style="padding:3px;">
-            <b>João Carlos:</b>
-            <br> Bom dia, <br>
-            O carro possui 50000 km.<br>
-            Atentamente.
-        </div>
-        <div class="options" style="height:34px;padding:0 3px; padding-top:7px; box-shadow: 0 3px 5px #bbb inset; background:#efefef;border-bottom-right-radius: 3px;">                
 
-            <div>
-                <button type="button" class="btn btn-default btn-xs" style="float:right;">
-                    <span class="glyphicon glyphicon-envelope"></span> Responder 
-                </button>
-            </div>
+
+        </div>
+
+        <div class="options" style="height:34px;padding:0 3px; padding-top:7px; box-shadow: 0 3px 5px #bbb inset; background:#efefef;border-bottom-right-radius: 3px;">                
             <div>
                 <div class="input-group">
                     <input type="text" class="form-control input-xs" placeholder="0.05" style="width:80px;">

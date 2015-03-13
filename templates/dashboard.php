@@ -2,18 +2,19 @@
 include "parts/header.php";
 ?>
 
-<div class="container-fluid page-wrapper">
-    <div class="col-xs-12">
-        <h1>Arquivo</h1>
-        <div class="base-container upper"> 
-            dasdad asd sdsadsaçdksadçlakdasçdkasd <br> 
-            dasdad asd sdsadsaçdksadçlakdasçdkasd <br> 
-            dasdad asd sdsadsaçdksadçlakdasçdkasd <br> 
-            dasdad asd sdsadsaçdksadçlakdasçdkasd <br> 
-            dasdad asd sdsadsaçdksadçlakdasçdkasd <br>
-            dasdad asd sdsadsaçdksadçlakdasçdkasd <br>  
-        </div>
+<div class="col-sm-2">
+    <button class="btn btn-primary">Anunciar</button>
+    <h4><span class="glyphicon glyphicon-list-alt"> </span> Compras </h4>
+    <h4><span class="glyphicon glyphicon-list-alt"> </span> Vendas </h4>
+    <h4><span class="glyphicon glyphicon-list-alt"> </span> Categorias </h4>
+    <h4><span class="glyphicon glyphicon-list-alt"> </span> Categorias </h4>
+
+</div>
+<div class="col-sm-10">
+    <div class="base-container upper">
+        asds
     </div>
+    
 </div>
 
 <?php

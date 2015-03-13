@@ -1,6 +1,6 @@
 <div class="item-tile base-container upper">
-    <img src="img/item-prev.jpg" width="272" height="153"><br>
-    <div style="padding-top:3px"> 
+    <img src="img/item-prev.jpg" width="272" height="153" style="border-top-left-radius: 3px;border-top-right-radius: 3px;"><br>
+    <div style="padding:3px;"> 
         <b>Titulo</b>
         <span style="float:right;"><span class="glyphicon glyphicon-clock" aria-hidden="true"></span>faltam 10m </span>
 
