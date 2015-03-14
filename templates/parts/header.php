@@ -4,7 +4,10 @@
         <meta charset="UTF-8">
         <title>Leiloes </title>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
+        
         <link rel="stylesheet" href="css/structure.css" type="text/css">
+        <link rel="stylesheet" href="css/item-prev.css" type="text/css">
+        
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
@@ -49,10 +52,10 @@
         <div id="notifications-center" class="base-container lower" style="margin:10px 50px;margin-top:0;padding:1px;display:none;">
             <div style="margin:0 auto; width:600px;">
                 <?php
-                include 'parts/notification-msg.php';
-                include 'parts/notification-track.php';
-                include 'parts/notification-track.php';
-                include 'parts/notification-track.php';
+                include 'parts/prevs/item-list-buyer-msg.php';
+                include 'parts/prevs/item-list-buyer-track.php';
+                include 'parts/prevs/item-list-buyer-track.php';
+                include 'parts/prevs/item-list-buyer-track.php';
                 ?>
             </div>
             <div class="clearfix"> </div>

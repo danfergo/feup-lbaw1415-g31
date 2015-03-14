@@ -23,7 +23,7 @@ include "parts/header.php";
 <div class="col-sm-10">
     <?php
     for ($i = 0; $i < 10; $i++) {
-        include "parts/item-tile.php";
+        include "parts/prevs/item-tile.php";
     }
     ?>
 </div>

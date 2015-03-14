@@ -12,10 +12,11 @@ include "parts/header.php";
 
 </div>
 <div class="col-sm-10">
-    <div class="base-container upper">
-        asds
-    </div>
-    
+        <?php 
+            for($i = 0; $i < 4; $i++){
+                include('parts/prevs/item-list-seller-draft.php');
+            }
+        ?>
 </div>
 
 <?php

@@ -83,21 +83,10 @@ ul.inline-clean > li {
 }
 
 
-.notification .options {
-    text-align:right;
-}
-
-.notification .options > div {
-    display:inline-block;
-}
 
 /** footer **/
 
 
-.item-tile {
-    margin:13px;
-    float:left;
-}
 
 
 /** bootstrap expansion **/
@@ -114,6 +103,3 @@ ul.inline-clean > li {
     transition: all 5ms;
 }
 
-.notification .input-group-btn{
-    width:auto!important; /* override bootstrap .  */
-}
