@@ -113,3 +113,7 @@ ul.inline-clean > li {
 #notifications-hidder{
     transition: all 5ms;
 }
+
+.notification .input-group-btn{
+    width:auto!important; /* override bootstrap .  */
+}
