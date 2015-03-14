@@ -98,3 +98,28 @@
     box-shadow: 0 -3px 5px #bbb inset; 
     background:#efefef;
 }
+
+
+/** rating **/
+
+.item-list.rating .prev{
+    width:10%;
+}
+
+.item-list.rating .details{
+    position:absolute;
+    right:0;
+    top:0;
+    bottom:0;
+    width:25%;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 3px 0 5px #bbb inset; 
+    background:#eee;
+}
+
+.item-list.rating .rate {
+    margin-left:10%;
+    padding:5px;
+    min-height:72px;
+}

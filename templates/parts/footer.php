@@ -1,7 +1,7 @@
-<div class="clearfix" style="height:40px;"></div>
+<div class="clearfix"></div>
 
-<footer>
-    <p style="float:right;">design and developed by: D-TEAM @ LBAW/MIEIC-FEUP </p>
+<footer style="padding:40px 0;">
+    <p style="float:right;">design and developed by: D-TEAM @ LBAW/MIEIC-FEUP 2015</p>
 
 </footer>
 </div>

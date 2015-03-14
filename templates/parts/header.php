@@ -37,7 +37,7 @@
                     <div class="col-xs-9">
                         <nav style="">
                             <ul class="inline-clean">                            
-                                <li><a href="#Logout">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sair</a></li>
+                                <li><a href="login.php">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sair</a></li>
                                 <li><a href="dashboard.php">  <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Painel</a></li>
                                 <li><a href="profile.php">  <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Perfil </a></li>
                                 <li><a href="javascript:void($('#notifications-center').toggle());">  <span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a></li>
