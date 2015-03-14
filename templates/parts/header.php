@@ -23,46 +23,41 @@
 
     </head>
     <body>
-        <div id="notification-hidder" style="height:200px;overflow:hidden;">
 
 
-            <div id="header-box">
-                <div class="container-fluid main-wapper" >
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <span style="font-size:36px;border:1px solid;">LOGO HERE</span>
-                        </div>
-                        <div class="col-xs-9">
-                            <nav style="padding-top:25px;">
-                                <ul class="inline-clean">                            
-                                    <li><a href="#Logout">  <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-                                    <li><a href="javascript:void($('#notifications-center').toggle());">  <span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a></li>
-                                   <!-- <li><a href="#Messages">  <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> Mensagens</a></li> -->
-                                    <li><a href="dashboard.php">  <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></a></li>
-                                    <!-- <li><a href="newauction.php">
-                                             <input type="button" class="btn btn-primary" aria-expanded="false" value="Vender">
-                                         </a>
-                                     </li>-->
-                                </ul>
-                            </nav>
-                        </div>
+        <div id="header-box"  style="margin-top:25px;">
+            <div class="container-fluid main-wapper" >
+                <div class="row">
+                    <div class="col-xs-3">
+                        <a href="index.php"><span style="font-size:36px; background:#eee; padding:1px 5px;font-weight:bold;">LOGO HERE</span></a>
                     </div>
-
+                    <div class="col-xs-9">
+                        <nav style="">
+                            <ul class="inline-clean">                            
+                                <li><a href="#Logout">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sair</a></li>
+                                <li><a href="dashboard.php">  <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Painel</a></li>
+                                <li><a href="profile.php">  <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Perfil </a></li>
+                                <li><a href="javascript:void($('#notifications-center').toggle());">  <span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
-            </div>
 
-            <div id="notifications-center" class="base-container lower" style="margin:10px 50px;margin-top:0;padding:1px;">
-                <div style="margin:0 auto; width:600px;">
-                    <?php
-                    include 'parts/notification-msg.php';
-                    include 'parts/notification-track.php';
-                    include 'parts/notification-track.php';
-                    include 'parts/notification-track.php';
-                    ?>
-                </div>
-                <div class="clearfix"> </div>
             </div>
         </div>
+
+        <div id="notifications-center" class="base-container lower" style="margin:10px 50px;margin-top:0;padding:1px;display:none;">
+            <div style="margin:0 auto; width:600px;">
+                <?php
+                include 'parts/notification-msg.php';
+                include 'parts/notification-track.php';
+                include 'parts/notification-track.php';
+                include 'parts/notification-track.php';
+                ?>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        
         <div class="clearfix"> </div>
         <div id="search-box">
             <div class="container-fluid main-wapper">

@@ -4,8 +4,7 @@ include "parts/header.php";
 
 <div class="container-fluid page-wrapper">
     <div class="col-xs-12">
-        <h1>Novo</h1>
-        <div class="base-container upper"> 
+        <div class="base-container upper" style="padding:20px;"> 
             <form>
                 <fieldset>
                     <legend>Informaçoes gerais </legend>

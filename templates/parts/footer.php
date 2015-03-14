@@ -1,4 +1,4 @@
-<div class="clearfix" style="height:20px;"></div>
+<div class="clearfix" style="height:40px;"></div>
 
 <footer>
     <p style="float:right;">design and developed by: D-TEAM @ LBAW/MIEIC-FEUP </p>
