@@ -1,10 +1,32 @@
 <div class="clearfix"></div>
 
+<?php if ($ISADMIN) { ?>
+    <div style="text-align:center;padding-top:40px;">
+        <a href="index.php?loggedin&adminmode"> 
+            <button type="button" class="btn btn-sm btn-default" >
+                <span class="glyphicon glyphicon-wrench"> </span> Ativar modo de administraçao
+            </button>
+        </a>
+    </div>
+
+<?php } else if ($ADMINMODE) { ?>
+    <div style="text-align:center;padding-top:40px;">
+        <a href="index.php?loggedin&admin"> 
+            <button type="button" class="btn btn-sm btn-default" >
+                <span class="glyphicon glyphicon-wrench"> </span> Desligar modo de administraçao
+            </button>
+        </a>
+    </div>
+<?php } ?>
+
 <footer style="padding:40px 0;">
     <p style="float:right;">design and developed by: D-TEAM @ LBAW/MIEIC-FEUP 2015</p>
 
 </footer>
 </div>
+
+
+
 <script>
     /**
      var $notificationHeader = $("#notification-hidder");
@@ -47,8 +69,9 @@
     var urlParts = window.location.href.split("?");
     if (urlParts.length === 2) {
         $("a").each(function (i) {
-            if ($(this).attr("href").split("?").length === 1) {
-                $(this).attr("href", $(this).attr("href") + "?" + urlParts[1]);
+            var href = $(this).attr("href");
+            if (href.split("?").length === 1 && href.substring(0, 10) !== "javascript") {
+                $(this).attr("href", href + "?" + urlParts[1]);
             }
         });
     }

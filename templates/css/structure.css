@@ -128,3 +128,10 @@ a:hover{
     color:#000;
     text-decoration:none;
 }
+
+
+/** admin mode style **/
+
+body.adminmode{
+    border-top:5px solid #F60000;
+}

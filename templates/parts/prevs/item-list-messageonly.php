@@ -1,9 +1,11 @@
-<div class="base-container upper item-list">
-    <?php include('auction-prev-content.php') ?>
+<div class="notification base-container upper item-list newmsg">
+    <div style="background-image:url('img/avatar.jpg');" class="prev"> </div>
+
+    <?php include('auction-prev-msg.php') ?>
+
     <div class="options">   
         <div style="float:right;">
             <?php include('auction-prev-options-reply.php') ?>
-            <?php include('auction-prev-options-track.php') ?>
         </div>    
     </div>    
     <div class="clearfix"></div>

@@ -1,25 +1,16 @@
 <?php
 include "parts/header.php";
+
+include "dashboard-sidebar.php";
 ?>
 
-<div class="col-sm-2">
-    <br>
-    <a href="newauction.php"><button class="btn btn-sm btn-primary" style="width:100%;">Criar leilão</button></a>
-    <br>
-    <br>
-    <h4><span class="glyphicon glyphicon-shopping-cart"> </span> Compras </h4>
-    <h4><span class="glyphicon glyphicon-inbox"> </span> Vendas </h4>
-    <h4><span class="glyphicon glyphicon-envelope"> </span> Mensagens </h4>
-    <br>
-    <h4><span class="glyphicon glyphicon-cog"> </span>
-        <a href="settings.php"> Definiçoes </a></h4>
-
-</div>
 <div class="col-sm-10">
         <?php 
-            for($i = 0; $i < 4; $i++){
+                include('parts/prevs/item-list-giverating.php');
                 include('parts/prevs/item-list-seller-draft.php');
-            }
+                include('parts/prevs/item-list-seller-active.php');
+                include('parts/prevs/item-list-seller-confirmshippment.php');
+                include('parts/prevs/item-list-buyer-msg.php');
         ?>
 </div>
 

@@ -1,3 +1,9 @@
+<?php
+ $LOGGEDIN = isset($_GET['loggedin']) ? true : false;
+ $ISADMIN = isset($_GET['admin']) && $LOGGEDIN ? true : false;
+ $ADMINMODE = isset($_GET['adminmode']) && $LOGGEDIN ? true : false;
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,6 +25,8 @@
 
         <script type="text/javascript">
             tinymce.init({
+                theme : "modern",
+                    skin: 'light',
                 selector: "textarea.editor",
                 menubar: false
             });
@@ -26,7 +34,7 @@
         </script>
 
     </head>
-    <body>
+    <body class="<?= $ADMINMODE ? "adminmode" : ""?>">
 
 
         <div id="header-box"  style="margin-top:25px;">
@@ -38,7 +46,7 @@
                     <div class="col-xs-9">
                         <nav style="">
                             <ul class="inline-clean">  
-                                <?php if (isset($_GET['loggedin'])) { ?> 
+                                <?php if ($LOGGEDIN) { ?> 
                                     <li><a href="index.php?loggout">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sair</a></li>
                                     <li><a href="dashboard.php">  <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Painel</a></li>
                                     <li><a href="profile.php">  <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Perfil </a></li>
