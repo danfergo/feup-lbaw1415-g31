@@ -11,7 +11,8 @@ include "parts/header.php";
     <h4><span class="glyphicon glyphicon-inbox"> </span> Vendas </h4>
     <h4><span class="glyphicon glyphicon-envelope"> </span> Mensagens </h4>
     <br>
-    <h4><span class="glyphicon glyphicon-cog"> </span> Definiçoes </h4>
+    <h4><span class="glyphicon glyphicon-cog"> </span>
+        <a href="settings.php"> Definiçoes </a></h4>
 
 </div>
 <div class="col-sm-10">

@@ -12,7 +12,7 @@ include "parts/header.php";
         </div>
 
 
-        <a href="index.php?loggedin"><button class="btn btn-primary" style="width:100%;">Iniciar sessão</button></a>
+        <a href="index.php?loggedin"><button class="btn btn-primary" type="button" style="width:100%;">Iniciar sessão</button></a>
         <br>
         <br>
         <label style="font-weight: normal;">

@@ -47,7 +47,7 @@
     var urlParts = window.location.href.split("?");
     if (urlParts.length === 2) {
         $("a").each(function (i) {
-            if ($(this).attr("href").split("?") === 1) {
+            if ($(this).attr("href").split("?").length === 1) {
                 $(this).attr("href", $(this).attr("href") + "?" + urlParts[1]);
             }
         });
