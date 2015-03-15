@@ -15,7 +15,10 @@ include "parts/header.php";
         <button type="submit" class="btn btn-primary" style="width:100%;">Iniciar sessão</button>
         <br>
         <br>
-
+        <label style="font-weight: normal;">
+            <input type="checkbox"> Lembrar-me
+        </label>
+        <br>
         <a href="#">Recuperar palavra-passe</a>
 
     </form>
@@ -23,7 +26,7 @@ include "parts/header.php";
 <br>
 <br>
 <div style="text-align:center;">
-    <a href="#">Criar uma conta </a>
+    <a href="register.php">Criar uma conta </a>
 </div>
 <?php
 include "parts/footer.php";

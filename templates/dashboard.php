@@ -3,7 +3,10 @@ include "parts/header.php";
 ?>
 
 <div class="col-sm-2">
-    <a href="newauction.php"><button class="btn btn-sm btn-primary">Anunciar</button></a>
+    <br>
+    <a href="newauction.php"><button class="btn btn-sm btn-primary" style="width:100%;">Criar leilão</button></a>
+    <br>
+    <br>
     <h4><span class="glyphicon glyphicon-shopping-cart"> </span> Compras </h4>
     <h4><span class="glyphicon glyphicon-inbox"> </span> Vendas </h4>
     <h4><span class="glyphicon glyphicon-envelope"> </span> Mensagens </h4>

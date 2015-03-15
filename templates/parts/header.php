@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <title>Leiloes </title>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
-        
+
         <link rel="stylesheet" href="css/structure.css" type="text/css">
         <link rel="stylesheet" href="css/item-prev.css" type="text/css">
-        
+
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
@@ -19,7 +19,8 @@
 
         <script type="text/javascript">
             tinymce.init({
-                selector: "textarea.editor"
+                selector: "textarea.editor",
+                menubar: false
             });
 
         </script>
@@ -60,7 +61,7 @@
             </div>
             <div class="clearfix"> </div>
         </div>
-        
+
         <div class="clearfix"> </div>
         <div id="search-box">
             <div class="container-fluid main-wapper">
@@ -85,8 +86,8 @@
             <nav id="breadcrumbs">
                 <ul class="inline-clean">                            
                     <li><a href="index.php">  <span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
-                    <li><a href="#Notifications"> Level1 </a></li>
-                    <li><a href="#Messages"> Level2 </a></li>
+                    <li><a href="#"> Level1 </a></li>
+                    <li><a href="#"> Level2 </a></li>
                 </ul>
             </nav>
             <div style="height:20px;">  </div>

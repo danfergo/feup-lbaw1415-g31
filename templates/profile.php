@@ -7,7 +7,7 @@ include "parts/header.php";
     </div>
     <div class="info" style="margin-left:270px;min-height:190px;padding:20px 30px;">
         <button class="btn btn-default" style="float:right;margin-top:25px;">Enviar mensagem</button>
-        <h2>João Costa</h2>
+        <h2>Nome do Utilizador</h2>
         <br>
         
         <div class="buyer-rank" style="float:left;">

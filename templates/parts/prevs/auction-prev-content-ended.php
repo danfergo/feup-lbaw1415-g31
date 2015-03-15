@@ -1,6 +1,6 @@
 <div style="background-image:url('img/item-prev.jpg');" class="prev"> </div>
 <div class="details">         
-    <div class="title">Titulo</div>
+    <div class="title">Titulo do leilão</div>
     <div class="extra-details">
         <div class="nrbids"><span class="glyphicon glyphicon-clock" aria-hidden="true"></span>Licitaçoes: 5 </span></div>
     </div>

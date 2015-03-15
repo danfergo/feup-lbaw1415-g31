@@ -22,8 +22,8 @@
 .item-list .options, .item-tile .options{
     height:34px;
     padding:7px 5px 5px;
-    box-shadow: 0 3px 5px #bbb inset; 
-    background:#efefef;
+    box-shadow: 0 3px 3px #bbb inset; 
+    background:#eee;
     border-bottom-right-radius: 3px;
 }
 
@@ -95,8 +95,8 @@
 }
 
 .item-list.newmsg .details{
-    box-shadow: 0 -3px 5px #bbb inset; 
-    background:#efefef;
+    box-shadow: 0 -3px 3px #bbb inset; 
+    background:#eee;
 }
 
 
@@ -114,7 +114,7 @@
     width:25%;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
-    box-shadow: 3px 0 5px #bbb inset; 
+    box-shadow: 3px 0 3px #bbb inset; 
     background:#eee;
 }
 
