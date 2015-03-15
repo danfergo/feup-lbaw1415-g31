@@ -37,11 +37,16 @@
                     </div>
                     <div class="col-xs-9">
                         <nav style="">
-                            <ul class="inline-clean">                            
-                                <li><a href="login.php">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sair</a></li>
-                                <li><a href="dashboard.php">  <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Painel</a></li>
-                                <li><a href="profile.php">  <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Perfil </a></li>
-                                <li><a href="javascript:void($('#notifications-center').toggle());">  <span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a></li>
+                            <ul class="inline-clean">  
+                                <?php if (isset($_GET['loggedin'])) { ?> 
+                                    <li><a href="index.php?loggout">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sair</a></li>
+                                    <li><a href="dashboard.php">  <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Painel</a></li>
+                                    <li><a href="profile.php">  <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Perfil </a></li>
+                                    <li><a href="javascript:void($('#notifications-center').toggle());">  <span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a></li>
+                                <?php } else { ?>
+                                    <li><a href="login.php">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Login</a></li>                                
+                                    <li><a href="register.php">  <span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span> Registar</a></li>                                
+                                <?php } ?>
                             </ul>
                         </nav>
                     </div>
