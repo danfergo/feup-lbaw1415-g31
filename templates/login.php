@@ -12,14 +12,14 @@ include "parts/header.php";
         </div>
 
 
-        <a href="index.php?loggedin"<button type="submit" class="btn btn-primary" style="width:100%;">Iniciar sessão</button></a>
+        <a href="index.php?loggedin"><button class="btn btn-primary" style="width:100%;">Iniciar sessão</button></a>
         <br>
         <br>
         <label style="font-weight: normal;">
             <input type="checkbox"> Lembrar-me
         </label>
         <br>
-        <a href="#">Recuperar palavra-passe</a>
+        <a href="recoverpassword.php">Recuperar palavra-passe</a>
 
     </form>
 </div>
