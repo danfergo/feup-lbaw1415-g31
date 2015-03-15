@@ -63,7 +63,9 @@ include "parts/header.php";
                 </fieldset>
 
                 <div style="text-align:right;padding:20px 0 5px">
-                    <input type="button" value="Criar conta" class="btn btn-primary">
+                    <a href="confirmaccount.php">
+                        <input type="button" value="Criar conta" class="btn btn-primary">
+                        </a>
                 </div>
             </form>
         </div>

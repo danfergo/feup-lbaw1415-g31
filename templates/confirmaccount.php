@@ -6,7 +6,7 @@ include "parts/header.php";
     <p> A sua conta ainda nao se encontra ativa. Um e-mail de confirmaçao foi enviado para o seu e-mail. Basta abrir o link existente neste para esta ficar ativa de imediato.
     </p>
     <br>
-    <a href="index.php?loggedin"><button type="submit" class="btn btn-primary">Enviar  novo e-mail de confirmaçao</button></a>
+    <a href="confirmaccount.php"><button type="submit" class="btn btn-primary">Enviar  novo e-mail de confirmaçao</button></a>
     <br>
 </div>
 <?php
