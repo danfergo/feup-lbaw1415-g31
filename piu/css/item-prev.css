@@ -1,0 +1,125 @@
+/** both modes **/
+.item-tile .prev,.item-list .prev{
+    background-size: cover;
+    background-position: center center;
+}
+
+
+.item-tile .title, .item-list .title{
+    font-weight:bold;
+    font-size:120%;
+}
+
+.item-tile .extra-details, .item-list .extra-details{
+    float:left;
+}
+
+.item-tile .costs, .item-list .costs {
+    float:right;
+    text-align:right;
+}
+
+.item-list .options, .item-tile .options{
+    height:34px;
+    padding:7px 5px 5px;
+    box-shadow: 0 3px 3px #bbb inset; 
+    background:#eee;
+    border-bottom-right-radius: 3px;
+}
+
+.item-list .options ,.item-tile .options{
+    text-align:right;
+}
+
+.item-list .options > div > div , .item-tile .options > div > div {
+    float:left;
+    margin-left: 5px;
+}
+
+.item-list .options .input-group-btn, .item-tile .options .input-group-btn{
+    width:auto!important; /* override bootstrap . idk what going on */
+}
+
+
+/** tile mode **/
+.item-tile {
+    margin:13px;
+    float:left;
+}
+
+.item-tile .details {
+    padding:1px 5px 5px;    
+}
+
+.item-tile .prev{
+    width:272px;
+    height:153px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom:1px solid #999;
+}
+
+
+
+
+
+
+
+
+/** list mode **/
+.item-list {
+    position:relative;
+    margin:10px auto;
+}
+
+.item-list .prev{
+    position:absolute;
+    width:25%;
+    left:0;
+    top:0;
+    bottom:0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-right:1px solid #999;
+}
+
+.item-list .details, .item-list .options, .item-list .message{
+    width:75%;
+    margin-left:-1px;
+    float:right;
+}
+
+.item-list .details{
+    padding:5px;
+    border-top-right-radius: 3px;
+}
+
+.item-list.newmsg .details{
+    box-shadow: 0 -3px 3px #bbb inset; 
+    background:#eee;
+}
+
+
+/** rating **/
+
+.item-list.rating .prev{
+    width:10%;
+}
+
+.item-list.rating .details{
+    position:absolute;
+    right:0;
+    top:0;
+    bottom:0;
+    width:25%;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 3px 0 3px #bbb inset; 
+    background:#eee;
+}
+
+.item-list.rating .rate {
+    margin-left:10%;
+    padding:5px;
+    min-height:72px;
+}
