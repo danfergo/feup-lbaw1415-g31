@@ -1,6 +1,5 @@
 <div class="notification base-container upper item-list newmsg">
-    <div style="background-image:url('img/avatar.jpg');" class="prev"> </div>
-
+    <a href="auction.php"><div style="background-image:url('img/avatar.jpg');" class="prev"> </div></a>
     <?php include('auction-prev-msg.php') ?>
 
     <div class="options">   
