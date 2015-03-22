@@ -26,8 +26,12 @@ ul.inline-clean > li {
 
 
 /** header **/
-#header-box li{
+#header-box nav li{
     float:right;
+    margin:10px 10px 5px;
+}
+#header-box nav li:first-child{
+    margin-right: 0;
 }
 
 #header-box nav{
@@ -40,7 +44,10 @@ ul.inline-clean > li {
 #search-box{
     background:#fff;
     box-shadow: 0 0 5px #888888;
-    padding:50px 10px;
+}
+
+#search-box > div > .container-fluid{
+    padding:4% 15px;
 }
 
 #header-box {
@@ -134,4 +141,14 @@ a:hover{
 
 body.adminmode{
     border-top:5px solid #F60000;
+}
+
+
+#website-logo{
+    font-size:36px; 
+    background:#eee; 
+    padding:1px 5px;
+    font-weight:bold;
+    max-width:250px;
+    margin-bottom:10px;
 }

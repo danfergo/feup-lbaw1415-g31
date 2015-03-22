@@ -43,7 +43,7 @@ include "parts/header.php";
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Defina uma nova fotografia para o seu perfil">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Escolher fotografia</button>
+                                        <button class="btn btn-default" type="button">Escolher</button>
                                     </span>
                                 </div><!-- /input-group -->
                                 <br>

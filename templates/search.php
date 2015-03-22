@@ -22,30 +22,36 @@ include "parts/header.php";
     </ul>
 </div>
 <div class="col-sm-10">
-    <div style="float:right">
-        <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                Ordenar resultados por
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Custo+Portes descendente</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Custo+Portes ascendente</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Custo ascendente</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Custo descendente</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Nº licitaçoes descente</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Nº licitaçoes ascendente</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tempo restante descente</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tempo restante ascendente</a></li>
-            </ul>
+
+        <div style="float:right;margin-right:15px;">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                    Ordenar resultados por
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Custo+Portes descendente</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Custo+Portes ascendente</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Custo ascendente</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Custo descendente</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Nº licitaçoes descente</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Nº licitaçoes ascendente</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tempo restante descente</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tempo restante ascendente</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="clearfix"></div>
-    <?php
-    for ($i = 0; $i < 10; $i++) {
-        include "parts/prevs/item-tile.php";
-    }
-    ?>
+        <div class="clearfix"></div>
+
+        <?php for ($i = 0; $i < 10; $i++) {
+            ?>
+            <div class="col-xs-12 col-lg-4" style="margin:15px 0;">
+
+                <?php include "parts/prevs/item-tile.php"; ?>
+            </div>
+            <?php
+        }
+        ?>
 </div>
 <?php
 include "parts/footer.php";

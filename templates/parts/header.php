@@ -1,13 +1,15 @@
 <?php
- $LOGGEDIN = isset($_GET['loggedin']) ? true : false;
- $ISADMIN = isset($_GET['admin']) && $LOGGEDIN ? true : false;
- $ADMINMODE = isset($_GET['adminmode']) && $LOGGEDIN ? true : false;
+$LOGGEDIN = isset($_GET['loggedin']) ? true : false;
+$ISADMIN = isset($_GET['admin']) && $LOGGEDIN ? true : false;
+$ADMINMODE = isset($_GET['adminmode']) && $LOGGEDIN ? true : false;
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>Leiloes </title>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
 
@@ -25,8 +27,8 @@
 
         <script type="text/javascript">
             tinymce.init({
-                theme : "modern",
-                    skin: 'light',
+                theme: "modern",
+                skin: 'light',
                 selector: "textarea.editor",
                 menubar: false
             });
@@ -34,17 +36,17 @@
         </script>
 
     </head>
-    <body class="<?= $ADMINMODE ? "adminmode" : ""?>">
+    <body class="<?= $ADMINMODE ? "adminmode" : "" ?>">
 
 
         <div id="header-box"  style="margin-top:25px;">
             <div class="container-fluid main-wapper" >
                 <div class="row">
-                    <div class="col-xs-3">
-                        <a href="index.php"><span style="font-size:36px; background:#eee; padding:1px 5px;font-weight:bold;">LOGO HERE</span></a>
+                    <div class="col-sm-4 col-xs-12">
+                        <a href="index.php"><div id="website-logo">LOGO HERE</div></a>
                     </div>
-                    <div class="col-xs-9">
-                        <nav style="">
+                    <div class="col-sm-8 col-xs-12">
+                        <nav>
                             <ul class="inline-clean">  
                                 <?php if ($LOGGEDIN) { ?> 
                                     <li><a href="index.php?loggout">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sair</a></li>
@@ -63,7 +65,7 @@
             </div>
         </div>
 
-        <div id="notifications-center" class="base-container lower" style="margin:10px 50px;margin-top:0;padding:1px;display:none;">
+        <div id="notifications-center" class="base-container lower" style="margin:10px 2%;margin-top:0;padding:1px;display:none;">
             <div style="margin:0 auto; width:600px;">
                 <?php
                 include 'parts/prevs/item-list-buyer-msg.php';
@@ -76,31 +78,48 @@
         </div>
 
         <div class="clearfix"> </div>
+
+        <!-- SEARCH BAR-->
         <div id="search-box">
-            <div class="container-fluid main-wapper">
-                <div class="col-xs-10">
-                    <div class="input-group">
-                        <input type="text" class="form-control" aria-label="...">
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Categoria <span class="caret"></span></button>
-                            <ul class="dropdown-menu dropdown-menu-right" role="menu" >
-                                <li><a href="#">Categoria 1</a></li>
-                                <li><a href="#">Categoria 2</a></li>
-                                <li><a href="#">Categoria 3</a></li>
-                                <li><a href="#">Categoria 4</a></li>
-                            </ul>
-                        </div><!-- /btn-group -->
-                    </div><!-- /input-group -->
+            <div class="main-wapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-10" style="margin-bottom: 5px;">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="...">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Categoria <span class="caret"></span></button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+                                        <li><a href="#">Categoria 1</a></li>
+                                        <li><a href="#">Categoria 2</a></li>
+                                        <li><a href="#">Categoria 3</a></li>
+                                        <li><a href="#">Categoria 4</a></li>
+                                    </ul>
+                                </div><!-- /btn-group -->
+                            </div><!-- /input-group -->
+                        </div>
+                        <div class=" col-xs-12 col-sm-2" >
+                            <a href="search.php"><button class="btn btn-primary" style="width:100%;" type="button">Pesquisar</button></a>
+                        </div>
+
+                    </div>
                 </div>
-                <a href="search.php"><button class="btn btn-primary col-xs-2" type="button">Pesquisar</button></a>
             </div>
         </div>
+
+        <!-- MAIN PAGE BEGIN -->
         <div id="page-wrapper" class="fluid-container main-wapper">
-            <nav id="breadcrumbs">
-                <ul class="inline-clean">                            
-                    <li><a href="index.php">  <span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
-                    <li><a href="#"> Level1 </a></li>
-                    <li><a href="#"> Level2 </a></li>
-                </ul>
-            </nav>
-            <div style="height:20px;">  </div>
+            <div clas="row">
+                <div class="col-xs-12">
+
+                    <nav id="breadcrumbs">
+                        <ul class="inline-clean">                            
+                            <li><a href="index.php">  <span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+                            <li><a href="#"> Level1 </a></li>
+                            <li><a href="#"> Level2 </a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="clearfix" style="height:20px;">  </div>
+

@@ -19,8 +19,8 @@
     </div>
 <?php } ?>
 
-<footer style="padding:40px 0;">
-    <p style="float:right;">design and developed by: D-TEAM @ LBAW/MIEIC-FEUP 2015</p>
+<footer style="padding:30px 0;">
+    <p style="text-align:right;margin:15px;margin-bottom:0;">design and developed by: D-TEAM @ LBAW/MIEIC-FEUP 2015</p>
 
 </footer>
 </div>

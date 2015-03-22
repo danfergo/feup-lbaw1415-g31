@@ -42,18 +42,12 @@
 
 
 /** tile mode **/
-.item-tile {
-    margin:13px;
-    float:left;
-}
-
 .item-tile .details {
     padding:1px 5px 5px;    
 }
 
 .item-tile .prev{
-    width:272px;
-    height:153px;
+    padding-bottom: 56.25%;  /* keeps prev with 16:9 ratio. thanks to http://stackoverflow.com/questions/8189840/22518932#22518932*/
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     border-bottom:1px solid #999;
