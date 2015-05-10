@@ -8,10 +8,10 @@
   error_reporting(E_ALL);
 
 
-  $BASE_DIR = '/opt/lbaw/lbaw1431/public_html/proto/'; //FIXME
-  $BASE_URL = '/~lbaw1431/proto/'; //FIXME
+  $BASE_DIR = '/var/www/html/leiloes/proto/'; //FIXME
+  $BASE_URL = '/leiloes/proto/'; //FIXME
 
-  $conn = new PDO('pgsql:host=vdbm;dbname=lbaw1431', 'lbaw1431', 'pY870eu3'); //FIXME
+  $conn = new PDO('pgsql:host=vdbm.fe.up.pt;dbname=lbaw1431', 'lbaw1431', 'pY870eu3'); //FIXME
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
