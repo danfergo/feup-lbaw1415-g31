@@ -7,7 +7,7 @@
 
     <div class="info" style="margin-left:270px;min-height:190px;padding:20px 30px;">
         <button class="btn btn-default" style="float:right;margin-top:25px;">Enviar mensagem</button>
-        <h2>Nome do Utilizador</h2>
+        <h2>{$user.name}</h2>
         <br>
 
         <div class="buyer-rank" style="float:left;">
@@ -72,12 +72,12 @@
 
         <h2>Leilões ativos</h2>
         <div class="row">
-
-            {section name=consumidor loop=10}
+                {foreach from=$auctions item=auction}
                 <div class="col-xs-6" style="margin-bottom: 15px;">
                     {include file='notifications/item-tile.tpl'}
                 </div>
-            {/section}
+            {/foreach}
+
 
         </div>
     </div>
