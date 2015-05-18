@@ -1,4 +1,5 @@
 <?php
+
 function auctionNew($title,$pass,$email,$activationCode) {
     global $conn;
 
@@ -79,3 +80,21 @@ function userActivationCode($userId){
     return $row ? $row['activation_code'] : false;
 }
 */
+
+    function viewIndex()
+    {
+        global $conn;
+
+        // WHERE state = "active"
+        $stmt = $conn->prepare("SELECT * FROM auction_view ORDER BY page_rank DESC LIMIT ?   ");
+        $stmt->execute(array(50));
+        $auctions = null;
+        while($row = $stmt->fetch() )
+        {
+            $row['time_remaining'] =
+            $auctions[] = $row;
+        }
+       return $auctions;
+
+    }
+
