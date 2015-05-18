@@ -1,9 +1,9 @@
 <?php
 function auctionNew($title,$pass,$email,$activationCode) {
-   /* global $conn;
+    global $conn;
 
     $conn->beginTransaction();
-
+    /*
     try {
         $stmt = $conn->prepare("INSERT INTO Usr (name,password,email) VALUES (?,?,?)");
         $stmt->execute(array($name, sha1($pass), $email));
@@ -32,14 +32,14 @@ function auctionEnd($auctionId){
     return $stmt->rowCount() > 0;*/
 }
 
-function getAuctionActiveByUser($userId){
+function getAuctionActiveByStore($storeId){
     global $conn;
 
     $stmt = $conn->prepare("SELECT *
-                            FROM Auction,Auction_view
-                            WHERE store = ? AND now()<end_time,
-                            Auction.auction_id = Auction_view.auction_id");
-    $stmt->execute(array($userId));
+                            FROM auction
+                            WHERE auction.store = ? ");//AND now()<end_time ");//AND Auction.auction_id = auction_view.auction_id");
+
+    $stmt->execute(array($storeId));
 
     return $stmt->fetch();
 }

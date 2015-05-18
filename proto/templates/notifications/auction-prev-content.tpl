@@ -1,6 +1,6 @@
 <a href="auction.php"><div style="background-image:url('../images/item-prev.jpg');" class="prev"> </div></a>
 <div class="details">         
-    <div class="title"><a href="auction.php">{$auction.auction_title}</a></div>
+    <div class="title"><a href="auction.php">{$auction.item_title}</a></div>
     <div class="extra-details">
         <div class="endtime"><span class="glyphicon glyphicon-clock" aria-hidden="true"></span>Faltam 10m </span></div>
         <div class="nrbids"><span class="glyphicon glyphicon-clock" aria-hidden="true"></span>Licitaçoes: 5 </span></div>

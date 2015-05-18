@@ -2,6 +2,8 @@
 include_once('../config/init.php');
 include_once("$BASE_DIR/shared/session.php");// base dir esta a ser declarado no init
 include_once("$BASE_DIR/database/users.php");// base dir esta a ser declarado no init
+include_once("$BASE_DIR/database/auctions.php");// base dir esta a ser declarado no init
+include_once("$BASE_DIR/database/store.php");// base dir esta a ser declarado no init
 
 
 $userId= isset($_GET['user']) ? $_GET["user"] :getUserId() ; // vai buscar o user
@@ -11,18 +13,20 @@ if(!$userId) {
 }
 
 if(!($user=getUser($userId))){
-    die("nao existe");// TODO filizar se nao existe
+    die("1 nao existe user");// TODO filizar se nao existe
 }
 
-$stmt = $conn->prepare("SELECT *
-                            FROM Usr
-                            WHERE user_id = ?");
-$auctions=array(
-    array("auction_id"=>"2323","auction_title"=>"yes","time_remaning"=>"23232222","nr_bids"=>"5","shiping_cost"=>"222","corrent_bid"=>"2"),
-    array("auction_id"=>"2323","auction_title"=>"no","time_remaning"=>"23232222","nr_bids"=>"5","shiping_cost"=>"222","corrent_bid"=>"2"),
-    array("auction_id"=>"2323","auction_title"=>"ooooo","time_remaning"=>"23232222","nr_bids"=>"5","shiping_cost"=>"222","corrent_bid"=>"2")
-);
+$storeId=isset($_GET['store']) ? $_GET["store"] :getStoreByUser($userId) ;
 
+if(!$storeId){
+    die("1 nao existe store $userId");// TODO filizar se nao existe
+}
+
+$auctions= isset($_GET['auction']) ? $_GET["auction"] :getAuctionActiveByStore($storeId) ; // vai buscar o user
+
+if($auctions===false){
+    die("2nao existe auction $storeId");// TODO filizar se nao existe
+}
 $smarty->assign('auctions',$auctions);// funcao que liga ao php
 $smarty->assign('user',$user);// funcao que liga ao php
 
