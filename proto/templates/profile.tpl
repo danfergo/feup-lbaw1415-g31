@@ -50,7 +50,7 @@
     <div class="col-xs-5">
 
         <h2>Últimas vendas efetuadas</h2>
-        {foreach from=$auctionSeller item=auctionSel}
+        {foreach from=$auctionSeller item=buySel}
             {include file='notifications/item-list-rating.tpl'}
         {/foreach}
 
@@ -59,7 +59,7 @@
         </div>
 
         <h2>Últimas compras efetuadas</h2>
-        {foreach from=$auctionBuyed item=auctionBuy}
+        {foreach from=$auctionBuyed item=buySel}
             {include file='notifications/item-list-rating.tpl'}
         {/foreach}
 
