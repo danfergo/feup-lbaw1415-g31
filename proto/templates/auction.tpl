@@ -2,44 +2,60 @@
 {include file='common/header.tpl'}
 
 <div class="container-fluid page-wrapper">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+
+    <h1>Casa com piscina</h1>
+
+    <div id="auction-carousel" class="carousel slide base-container upper" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#auction-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#auction-carousel" data-slide-to="1"></li>
+            <li data-target="#auction-carousel" data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="../images/item-prev.jpg" alt="...">
-                <div class="carousel-caption">
-                    ...
-                </div>
+            <div class="item active" style="background-image:url('../images/item-prev.jpg');">
             </div>
-            <div class="item">
-                <img src="../images/item-prev2.jpg" alt="...">
-                <div class="carousel-caption">
-                    ...
-                </div>
+            <div class="item" style="background-image:url('../images/item-prev2.jpg');">
             </div>
-            ...
+            <div class="item" style="background-image:url('../images/item-prev3.jpg');">
+            </div>
         </div>
 
         <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <a class="left carousel-control" href="#auction-carousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <a class="right carousel-control" href="#auction-carousel" role="button" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
     </div>
 
 
+    <style>
+        html, body, #page-wrapper, div.page-wrapper {
+            height:100%;
+        }
 
+        #auction-carousel{
+            height: 60%;
+        }
+
+        #auction-carousel .carousel-inner, #auction-carousel .item{
+            height:100%;
+        }
+
+        #auction-carousel .item{
+            background: center center no-repeat #000;
+            background-width:100% auto;
+            border-radius:3px;
+        }
+
+    </style>
 
 
 
@@ -47,11 +63,10 @@
         <div class="item-tile base-container upper col-xs-12">
             <div style="padding:3px;">
                 <div class="auction-title col-xs-12">
-                    <h1>Casa com piscina</h1>
                 </div>
-                <div class="auction-image col-xs-4">
-                    <img src="img/item-prev.jpg" width="341" height="256" style="border-top-left-radius: 3px;border-top-right-radius: 3px;padding: 10px; float: left;"><br>
-                </div>
+                <!--<div class="auction-image col-xs-4">
+                    <img src="../images/item-prev.jpg" width="341" height="256" style="border-top-left-radius: 3px;border-top-right-radius: 3px;padding: 10px; float: left;"><br>
+                </div> -->
                 <div class="col-xs-8">
                     <div class="auction-time-left col-xs-12">
                         <div class="col-xs-12">
@@ -106,20 +121,22 @@
                 </div>
                 <div class="auction-image col-xs-4" style="padding-bottom: 34px; padding-left: 22px">
                     <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-sm">Seguir leilão</button>
-                        <button type="button" class="btn btn-sm">Contactar o vendedor</button>
-                        <button type="button" class="btn btn-sm">Reportar leilão</button>
+                        <button class="btn btn-default" style="float:right;margin-top:25px;">Seguir leilão</button>
+                        <button class="btn btn-default" style="float:right;margin-top:25px;">Contactar o vendedor</button>
+                        <button class="btn btn-default" style="float:right;margin-top:25px;">Reportar leilão</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <div class="auction-title col-xs-12">
+        <h2>Descrição especifica ao item</h2>
+    </div>
     <div class="col-xs-12">
         <div class="item-tile base-container upper col-xs-12">
             <div style="padding:3px;">
-                <div class="auction-title col-xs-12">
-                    <h1>Descrição especifica ao item</h1>
-                </div>
 
                 <div class="col-xs-6">
                     <div class="auction-bid col-xs-12">
@@ -145,12 +162,14 @@
         </div>
     </div>
 
+
+    <div class="auction-title col-xs-12">
+        <h2>Descrição do autor</h2>
+    </div>
     <div class="col-xs-12">
         <div class="item-tile base-container upper col-xs-12">
             <div style="padding:3px;">
-                <div class="auction-title col-xs-12">
-                    <h1>Descrição do autor</h1>
-                </div>
+
                 <div class="auction-author-description col-xs-12" style="margin-bottom: 34px;">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nunc vel mi congue, egestas lectus vitae, feugiat nulla. Cras lacinia turpis
@@ -169,12 +188,13 @@
         </div>
     </div>
 
+    <div class="auction-title col-xs-12">
+        <h2>Mais detalhes</h2>
+    </div>
     <div class="col-xs-12">
         <div class="item-tile base-container upper col-xs-12">
-            <div style="padding:3px;">
-                <div class="auction-title col-xs-12">
-                    <h1>Mais detalhes</h1>
-                </div>
+            <div style="padding:30px;">
+
 
                 <div class="col-xs-6">
                     <div class="auction-title col-xs-12">
@@ -189,7 +209,7 @@
                         <h4 class="col-xs-5" style="margin: 0;">Cidade:</h4> <h4 class="col-xs-5" style="margin: 0;"> Porto</h4>
                     </div>
                 </div>
-                <div class="col-xs-6" style="margin-bottom: 34px">
+                <div class="col-xs-6" style="margin-bottom: 30px">
                     <div class="auction-title col-xs-12">
                         <h2>Envio da encomenda</h2>
                     </div>
@@ -205,5 +225,7 @@
             </div>
         </div>
     </div>
+
+
 </div>
 {include file='common/footer.tpl'}

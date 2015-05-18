@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="{$BASE_URL}css/item-prev.css" type="text/css">
 
         <script type="text/javascript" src="{$BASE_URL}lib/jquery/jquery.min.js"></script>
+
         <script type="text/javascript" src="{$BASE_URL}lib/bootstrap/js/bootstrap.min.js"></script>
 
         <link rel="stylesheet" href="{$BASE_URL}lib/bootstrap/selectpicker/css/bootstrap-select.min.css" type="text/css">
@@ -43,12 +44,12 @@
                             <ul class="inline-clean">
                                 {if $LOGGEDIN}
                                 <li><a href="{$BASE_URL}actions/logout.php">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sair</a></li>
-                                    <li><a href="dashboard/index.php">  <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Painel</a></li>
-                                    <li><a href="profile.php">  <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Perfil </a></li>
+                                    <li><a href="{$BASE_URL}pages/dashboard/index.php">  <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Painel</a></li>
+                                    <li><a href="{$BASE_URL}pages/profile.php">  <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Perfil </a></li>
                                     <li><a href="javascript:void($('#notifications-center').toggle());">  <span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a></li>
                                 {else}
-                                    <li><a href="login.php">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Login</a></li>
-                                    <li><a href="register.php">  <span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span> Registar</a></li>
+                                    <li><a href="{$BASE_URL}pages/login.php">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Login</a></li>
+                                    <li><a href="{$BASE_URL}pages/register.php">  <span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span> Registar</a></li>
                                 {/if}
                             </ul>
                         </nav>
