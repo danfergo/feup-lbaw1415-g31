@@ -50,18 +50,19 @@
     <div class="col-xs-5">
 
         <h2>Últimas vendas efetuadas</h2>
-        {section name=consumidor loop=5}
+        {foreach from=$auctionSeller item=auctionSel}
             {include file='notifications/item-list-rating.tpl'}
-        {/section}
+        {/foreach}
 
         <div style="text-align:center;">
             <a href="#"> Ver mais vendas </a>
         </div>
 
         <h2>Últimas compras efetuadas</h2>
-        {section name=consumidor loop=5}
+        {foreach from=$auctionBuyed item=auctionBuy}
             {include file='notifications/item-list-rating.tpl'}
-        {/section}
+        {/foreach}
+
 
         <div style="text-align:center;">
             <a href="#"> Ver mais compras </a>
@@ -72,7 +73,7 @@
 
         <h2>Leilões ativos</h2>
         <div class="row">
-                {foreach from=$auctions item=auction}
+            {foreach from=$auctions item=auction}
                 <div class="col-xs-6" style="margin-bottom: 15px;">
                     {include file='notifications/item-tile.tpl'}
                 </div>

@@ -38,50 +38,42 @@ function getAuctionActiveByStore($storeId){
 
     $stmt = $conn->prepare("SELECT *
                             FROM auction
-                            WHERE auction.store = ? AND now()<end_time ");//AND Auction.auction_id = auction_view.auction_id");
+                            WHERE auction.store = ? AND now()<auction.end_time ");//AND Auction.auction_id = auction_view.auction_id");
 
 
 
     $stmt->execute(array($storeId));
 
-    return $stmt->fetch();
+    return $stmt->fetchAll();
 }
-/*
-function setUserPassword($userId,$newPassword, $prefix = ""){
-    global $conn;
-    $stmt = $conn->prepare("UPDATE Usr SET password = ? WHERE user_id = ?");
-
-    $stmt->execute(array($prefix . sha1($newPassword),$userId));
-    return $stmt->rowCount() > 0;
-}
-
-function getUserByEmail($email){
+function getAuctionBuyer($userId){
     global $conn;
 
     $stmt = $conn->prepare("SELECT *
-                              FROM Usr
-                              WHERE email = ?");
-    $stmt->execute(array($email));
-
-    return $stmt->fetch();
-}
+                            FROM auction
+                            WHERE auction.buyer=?");
 
 
 
-
-function userActivationCode($userId){
-    global $conn;
-
-    $stmt = $conn->prepare("SELECT activation_code
-                              FROM User_not_active
-                              WHERE user_id = ?");
     $stmt->execute(array($userId));
 
-    $row = $stmt->fetch();
-
-    return $row ? $row['activation_code'] : false;
+    return $stmt->fetchAll();
 }
-*/
+function getAuctionSeller($storeId){
+    global $conn;
+
+    $stmt = $conn->prepare("SELECT *
+                            FROM auction
+                            WHERE auction.store = ? AND now()>auction.end_time ");
+
+
+
+    $stmt->execute(array($storeId));
+
+    return $stmt->fetchAll();
+}
+
+
 
     function viewIndex()
     {

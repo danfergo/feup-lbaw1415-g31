@@ -23,8 +23,12 @@ if(!$storeId){
 }
 
 $auctions= isset($_GET['auction']) ? $_GET["auction"] :getAuctionActiveByStore($storeId["store_id"]) ; // vai buscar o user
+$auctionBuyed= isset($_GET['auction']) ? $_GET["auction"] :getAuctionBuyer($userId) ; // vai buscar o user
+$auctionSeller= isset($_GET['auction']) ? $_GET["auction"] :getAuctionSeller($storeId["store_id"]) ; // vai buscar o user
 
-
+var_dump($auctionSeller);
+$smarty->assign('auctionSeller',$auctionSeller);// funcao que liga ao php
+$smarty->assign('auctionBuyed',$auctionBuyed);// funcao que liga ao php
 $smarty->assign('auctions',$auctions);// funcao que liga ao php
 $smarty->assign('user',$user);// funcao que liga ao php
 $smarty->display('profile.tpl');
