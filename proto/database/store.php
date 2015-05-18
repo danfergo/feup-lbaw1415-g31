@@ -8,5 +8,7 @@ function getStoreByUser($userId){
 
     $stmt->execute(array($userId));
 
+
+
     return $stmt->fetch();
 }

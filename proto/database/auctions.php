@@ -38,7 +38,9 @@ function getAuctionActiveByStore($storeId){
 
     $stmt = $conn->prepare("SELECT *
                             FROM auction
-                            WHERE auction.store = ? ");//AND now()<end_time ");//AND Auction.auction_id = auction_view.auction_id");
+                            WHERE auction.store = ? AND now()<end_time ");//AND Auction.auction_id = auction_view.auction_id");
+
+
 
     $stmt->execute(array($storeId));
 
