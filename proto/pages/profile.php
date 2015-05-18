@@ -24,9 +24,6 @@ if(!$storeId){
 
 $auctions= isset($_GET['auction']) ? $_GET["auction"] :getAuctionActiveByStore($storeId["store_id"]) ; // vai buscar o user
 
-if($auctions===false){
-    die("2nao existe auction $storeId");// TODO filizar se nao existe
-}
 
 $smarty->assign('auctions',$auctions);// funcao que liga ao php
 $smarty->assign('user',$user);// funcao que liga ao php
