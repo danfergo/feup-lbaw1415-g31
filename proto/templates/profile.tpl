@@ -51,7 +51,9 @@
 
         <h2>Últimas vendas efetuadas</h2>
         {foreach from=$auctionSeller item=buySel}
-            {include file='notifications/item-list-rating.tpl'}
+             <div  style="margin-bottom: 15px;">
+                {include file='notifications/item-list-rating.tpl'}
+             </div>
         {/foreach}
 
         <div style="text-align:center;">
@@ -60,7 +62,9 @@
 
         <h2>Últimas compras efetuadas</h2>
         {foreach from=$auctionBuyed item=buySel}
-            {include file='notifications/item-list-rating.tpl'}
+            <div  style="margin-bottom: 15px;">
+                {include file='notifications/item-list-rating.tpl'}
+            </div>
         {/foreach}
 
 

@@ -9,5 +9,6 @@
         <span class="glyphicon glyphicon-star-empty"></span>
         <span class="glyphicon glyphicon-star-empty"></span>          
     </div>
-    <div class="author">Maria Silva</div>
+    <div class="author">comprador {$buySel.user_name}</div>
+    <div class="author">vendedor  {$buySel.store_name}</div>
 </div>

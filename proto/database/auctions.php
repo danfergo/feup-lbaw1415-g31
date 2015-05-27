@@ -36,9 +36,9 @@ function auctionEnd($auctionId){
 function getAuctionActiveByStore($storeId){
     global $conn;
 
-    $stmt = $conn->prepare("SELECT *
-                            FROM auction
-                            WHERE auction.store = ? AND now()<auction.end_time ");//AND Auction.auction_id = auction_view.auction_id");
+    $stmt = $conn->prepare("SELECT *,current_bid
+                            FROM auction,auction_view
+                            WHERE auction.store = ? AND now()<auction.end_time AND auction_view.auction_id=auction.auction_id ");//AND Auction.auction_id = auction_view.auction_id");
 
 
 
@@ -49,9 +49,9 @@ function getAuctionActiveByStore($storeId){
 function getAuctionBuyer($userId){
     global $conn;
 
-    $stmt = $conn->prepare("SELECT *
-                            FROM auction
-                            WHERE auction.buyer=?");
+    $stmt = $conn->prepare("SELECT *,current_bid,usr.name AS user_name,store.name AS store_name
+                            FROM auction,auction_view,usr,store
+                            WHERE auction.buyer=?  AND auction_view.auction_id=auction.auction_id AND usr.user_id=auction.buyer AND store.store_id=auction.store");
 
 
 
@@ -62,9 +62,9 @@ function getAuctionBuyer($userId){
 function getAuctionSeller($storeId){
     global $conn;
 
-    $stmt = $conn->prepare("SELECT *
-                            FROM auction
-                            WHERE auction.store = ? AND now()>auction.end_time ");
+    $stmt = $conn->prepare("SELECT *,current_bid,usr.name AS user_name,store.name AS store_name
+                            FROM auction,auction_view,usr,store
+                            WHERE auction.store = ? AND now()>auction.end_time  AND auction_view.auction_id=auction.auction_id AND  usr.user_id=auction.buyer AND store.store_id=auction.store");
 
 
 
