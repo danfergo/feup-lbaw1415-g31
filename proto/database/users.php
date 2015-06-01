@@ -89,3 +89,12 @@
 
     return $row ? $row['activation_code'] : false;
   }
+function setUsername($userId,$userName){
+
+  global $conn;
+  $stmt = $conn->prepare("UPDATE Usr SET SET usr.name = ? WHERE user_id = ?");
+
+  $stmt->execute(array($userName,$userId));
+  return $stmt->rowCount() > 0;
+
+}

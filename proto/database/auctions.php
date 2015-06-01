@@ -51,7 +51,7 @@ function getAuctionBuyer($userId){
 
     $stmt = $conn->prepare("SELECT *,current_bid,usr.name AS user_name,store.name AS store_name
                             FROM auction,auction_view,usr,store
-                            WHERE auction.buyer=?  AND auction_view.auction_id=auction.auction_id AND usr.user_id=auction.buyer AND store.store_id=auction.store");
+                            WHERE auction.buyer=?  AND now()>auction.end_time AND auction_view.auction_id=auction.auction_id AND usr.user_id=auction.buyer AND store.store_id=auction.store");
 
 
 
