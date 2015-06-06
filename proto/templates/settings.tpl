@@ -10,7 +10,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label">Nome</label>
                             <div class="col-sm-9">
-                                <input type="email" class="form-control" id="inputEmail3" value={$user.name} name ="namenew">
+                                <input type="text" class="form-control" id="inputEmail3" value={$user.name} name ="namenew">
                             </div>
                         </div>
                         <div class="form-group">
@@ -22,14 +22,14 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label">Nova palavra-passe</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" id="inputPassword" placeholder="Palavra-passe de acesso à conta" name="passwordnew" required>
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Palavra-passe de acesso à conta" name="passwordnew">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label">Reintroduza a nova palavra-passe</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" id="ReinputPassword" data-match="#inputPassword" data-match-error="Pass não é igual" placeholder="Reintroduza a palavra-passe de acesso à conta"  required>
+                                <input type="password" class="form-control" id="ReinputPassword" data-match="#inputPassword" data-match-error="Pass não é igual" placeholder="Reintroduza a palavra-passe de acesso à conta" >
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -58,9 +58,9 @@
 
                 <div style="text-align:right;padding:20px 0 5px">
                     <div class="input-group" style="width:400px;float:right;">
-                        <input type="password" class="form-control" placeholder="Palavra-passe atual" name="password">
+                        <input type="password" class="form-control" placeholder="Palavra-passe atual" name="password" required>
                         <span class="input-group-btn">
-                            <button class="btn btn-primary" type="button">Guardar definições</button>
+                            <input type="submit" class="btn btn-primary" value="Guardar definições">
                         </span>
                     </div><!-- /input-group -->
 
