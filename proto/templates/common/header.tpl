@@ -17,6 +17,9 @@
         <link rel="stylesheet" href="{$BASE_URL}lib/bootstrap/selectpicker/css/bootstrap-select.min.css" type="text/css">
         <script type="text/javascript" src="{$BASE_URL}lib/bootstrap/selectpicker/js/bootstrap-select.min.js"></script>
 
+        <link rel="stylesheet" href="{$BASE_URL}lib/bootstrap/fileinput/css/fileinput.min.css" type="text/css">
+        <script type="text/javascript" src="{$BASE_URL}lib/bootstrap/fileinput/js/fileinput.min.js"></script>
+
 
         <script type="text/javascript" src="{$BASE_URL}lib/tinymce/tinymce.min.js"></script>
 
