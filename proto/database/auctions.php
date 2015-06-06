@@ -73,9 +73,7 @@ function getAuctionSeller($storeId){
     return $stmt->fetchAll();
 }
 
-
-
-    function viewIndex()
+function viewIndex()
     {
         global $conn;
 
@@ -92,3 +90,44 @@ function getAuctionSeller($storeId){
 
     }
 
+
+function getCategories($parent = null)
+{
+    global $conn;
+
+    if (is_null($parent)) {
+        $stmt = $conn->prepare("SELECT * FROM category WHERE parent_category ISNULL");
+        $stmt->execute();
+    } else {
+        $stmt = $conn->prepare("SELECT * FROM category WHERE parent_category = ?");
+        $stmt->execute(array($parent));
+    }
+
+    $categories = array();
+    while($row = $stmt->fetch()){
+        $row['sub_categories'] = getCategories($row['category_id']);
+        $categories[] = $row;
+    }
+    return $categories;
+
+}
+
+
+
+
+
+
+
+function getCategoryCharacteristics($categoryId){
+    global $conn;
+
+    $stmt = $conn->prepare("
+            ((SELECT * FROM caracteristc WHERE category_id AND is_bool = true)");
+    $stmt->execute();
+
+    $ret = array();
+    while($row = $stmt->fetch()){
+        $ret[] = $row;
+    }
+   return $categories;
+}

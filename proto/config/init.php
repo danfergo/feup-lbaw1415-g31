@@ -1,5 +1,5 @@
 <?php
-  session_set_cookie_params(3600, '/~lbaw1431/proto/'); //FIXME
+  session_set_cookie_params(3600, '/leiloes/proto/  '); //FIXME
   session_start();
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
@@ -8,14 +8,14 @@
   error_reporting(E_ALL);
 
 
-  $BASE_DIR = 'C:\wamp\www\Leiloes\proto\\'; //FIXME
-  $BASE_URL = '/Leiloes/proto/'; //FIXME
+  $BASE_DIR = '/var/www/html/leiloes/proto/'; //FIXME
+  $BASE_URL = '/leiloes/proto/'; //FIXME
 
   $conn = new PDO('pgsql:host=vdbm.fe.up.pt;dbname=lbaw1431', 'lbaw1431', 'pY870eu3'); //FIXME
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $conn->exec('SET SCHEMA \'public\''); //FIXME
+  $conn->exec('SET SCHEMA \'proto\''); //FIXME
 
   include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
   
