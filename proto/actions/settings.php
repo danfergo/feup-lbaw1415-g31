@@ -23,7 +23,7 @@ if(sha1($_POST['password'])!=$user['password']) {
 //$extension = end(explode(".", $photo["namenew"]));
 
 
-if(setSettings($userId,$_POST['namenew'],$_POST['passwordnew'],$_POST['emailnew'])){
+if(setSettings($userId,$_POST['namenew'],$_POST['emailnew'],$_POST['passwordnew'])){
     $_SESSION['success_messages'][] =  'definições alteradas com sucesso.';
     header("Location: $BASE_URL" . 'pages/profile.php');
 }else{
