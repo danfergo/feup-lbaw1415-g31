@@ -4,6 +4,7 @@
     <div class="col-xs-2"> </div>
     <div class="col-xs-8">
         <div style="text-align:center;"> <a href="#"> Ver mensagens mais antigas </a></div>
+
         <div class="base-container upper" style="padding:7px;margin:15px 0;">
             <div class="message">
 
@@ -34,18 +35,6 @@
                     Eu Mesmo
                 </div>
 
-            </div>
-        </div>
-
-        <div class="base-container upper" style="padding:7px;margin:15px 0;">
-            <div class="message">
-
-                <div style="font-weight:bold;">Em 12-12-2014 às 23:00  </div>
-                <div style="font-weight:bold;">Meu Nome disse:</div>
-                <textarea class="form-control" rows="3"></textarea>
-                <div style="text-align:right;padding: 5px 0;">
-                    <button type="submit" class="btn btn-primary">Enviar mensagem</button>
-                </div>
             </div>
         </div>
 

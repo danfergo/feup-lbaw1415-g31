@@ -1,6 +1,11 @@
-<a href="dashboard/messages.php"><div style="background-image:url('../images/item-prev.jpg');" class="prev"> </div></a>
-<div class="alert alert-warning alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span></button>
-    <img src="{$BASE_URL}images/avatar.jpg" width="55" height="55" style="border-radius: 3px;">
-    <strong>{$conversation.name}</strong>
-</div>
+
+<form  action="{$BASE_URL}actions/callconversation.php" method="post">
+    <div class="btn-group btn-group-justified">
+        <button type="submit" class="btn btn-primary"  >
+            <img src="{$BASE_URL}images/avatar.jpg" width="55" height="55" style="border-radius: 3px;" alt="imagem-do-utlizador">
+            <strong >{$conversation.name}</strong>
+        </button>
+
+    </div>
+
+</form>

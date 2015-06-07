@@ -18,7 +18,6 @@ if(!($conversation=getUserConversation($userId,$storeId["store_id"]))){
     die("nao exitem conversas");// TODO filizar se nao existe
 }
 
-var_dump($conversation);
 $smarty->assign('conversations',$conversation);// funcao que liga ao php
 
 
