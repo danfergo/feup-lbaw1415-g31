@@ -2,10 +2,10 @@
 {include file='dashboard/sidebar.tpl'}
 
 <div class="col-sm-10">
-    <?php
-            for($i = 0; $i < 4; $i++){
-                include('parts/prevs/item-list-messageonly.php');
-            }
-        ?>
+    {foreach from=$conversations item=conversation}
+        <div class="col-xs-7" style="margin-bottom: 15px;">
+            {include file='notifications/item-conversation.tpl'}
+        </div>
+    {/foreach}
 </div>
 {include file='common/footer.tpl'}
