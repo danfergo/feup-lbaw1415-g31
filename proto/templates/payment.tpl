@@ -1,5 +1,5 @@
 <div class="container">
-    <form class="form-horizontal" role="form">
+    <form class="form-horizontal" role="form" action="{$BASE_URL}actions/settings.php" method="post">
         <fieldset>
             <legend>Payment</legend>
             <div class="form-group">
@@ -61,7 +61,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-9">
-                    <button type="button" class="btn btn-success">Pay Now</button>
+                    <button type="submit" class="btn btn-success">Pay Now</button>
                 </div>
             </div>
         </fieldset>
