@@ -80,23 +80,25 @@
             <div class="main-wapper">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-10" style="margin-bottom: 5px;">
-                            <div class="input-group">
-                                <input type="text" class="form-control" aria-label="...">
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Categoria <span class="caret"></span></button>
-                                    <ul class="dropdown-menu dropdown-menu-right" role="menu" >
-                                        <li><a href="#">Categoria 1</a></li>
-                                        <li><a href="#">Categoria 2</a></li>
-                                        <li><a href="#">Categoria 3</a></li>
-                                        <li><a href="#">Categoria 4</a></li>
-                                    </ul>
-                                </div><!-- /btn-group -->
-                            </div><!-- /input-group -->
-                        </div>
-                        <div class=" col-xs-12 col-sm-2" >
-                            <a href="search.php"><button class="btn btn-primary" style="width:100%;" type="button">Pesquisar</button></a>
-                        </div>
+                        <form role="form" method="get" action="{$BASE_URL}actions/search.php" id="search-form">
+                            <div class="col-xs-12 col-sm-10" style="margin-bottom: 5px;">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" aria-label="..." name="search">
+                                    <input type="hidden" class="form-control" name="category" id="category">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Categoria <span class="caret"></span></button>
+                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+                                            {foreach from = $categories key = k item = category}
+                                                <li onclick="$('#category').val('{$category.title}'); $('#search-form').submit()"><a>{$category.title}</a></li>
+                                            {/foreach}
+                                        </ul>
+                                    </div><!-- /btn-group -->
+                                </div><!-- /input-group -->
+                            </div>
+                            <div class=" col-xs-12 col-sm-2" >
+                                <button class="btn btn-primary" style="width:100%;" type="submit" value="search" id="search">Pesquisar</button>
+                            </div>
+                        </form>
 
                     </div>
                 </div>
