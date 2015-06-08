@@ -128,7 +128,9 @@ function getCategoryCharacteristics($categoryId){
 
 function getAuctiontoPay($userId){
     global $conn;
-    $stmt = $conn->prepare("SELECT * FROM auction WHERE auction.buyer = ? AND payment_time>now() AND now()<auction.end_time ");
+    $stmt = $conn->prepare("SELECT *,current_bid,usr.name AS user_name,store.name AS store_name
+                            FROM auction,auction_view,usr,store
+                            WHERE auction.buyer = ? AND payment_time>now() AND now()<auction.end_time");
 
     $stmt->execute(array($userId));
     return $stmt->fetch();
