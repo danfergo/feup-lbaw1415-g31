@@ -3,14 +3,18 @@
 <div class="container-fluid page-wrapper">
     <div class="col-xs-12">
         <div class="base-container upper" style="padding:20px;">
-            <form>
+            {include file='common/system_messages.tpl'}
+
+            <form action="{$BASE_URL}actions/auction/new.php" method="post">
                 <fieldset>
                     <legend>Informaçoes gerais </legend>
                     <div class="form-horizontal">
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Titulo</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" placeholder="Um titulo para o item a vender" required>
+                            <div class="col-sm-10"item_title>
+                                <input {if isset($AUCTION.item_title)}value="{$AUCTION.item_title}"{/if}
+                                       type="text" class="form-control" name="item_title"
+                                       placeholder="Um titulo para o item a vender" required>
                             </div>
                         </div>
 
@@ -18,23 +22,28 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Categoria</label>
                             <div class="col-sm-10">
-                                <select name="category" class="selectpicker">
+                                <select
+                                        id="auction-category-selector" name="category_id"
+                                        class="form-control selectpicker"  title="Nenhuma Selecionada" requiredd>
+                                    <option data-hidden="true"></option>
                                     {foreach from=$categories item=category}
                                         <optgroup label="{$category.title}">
                                             {foreach from=$category.sub_categories item=sub_category}
-                                                <option value="{$category.category_id}">{$sub_category.title}</option>
+                                                <option {if isset($AUCTION.category_id) AND $AUCTION.category_id eq $sub_category.category_id} selected {/if}
+                                                        value="{$sub_category.category_id}">{$sub_category.title}</option>
                                             {/foreach}
                                         </optgroup>
                                     {/foreach}
                                 </select>
                             </div>
                         </div>
-
+                        <script type="text/javascript">$('.selectpicker').selectpicker(); // works faster</script>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Base de licitação</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" min="0" placeholder="Valor base do item a ser leiloado" step="0.01">
+                                <input {if isset($AUCTION.auction_base)}value="{$AUCTION.auction_base}"{/if}
+                                       type="number" class="form-control" name="auction_base" min="0" placeholder="Valor base do item a ser leiloado" step="0.01" required>
                             </div>
                         </div>
 
@@ -42,94 +51,74 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Comprar já</label>
                             <div class="col-sm-10">
-                                <input type="number" step="0.01" class="form-control" min="0" placeholder="Defina um valor de venda do item (opcional)">
+                                <input {if isset($AUCTION.buyout)}value="{$AUCTION.buyout}"{/if}
+                                       type="number" step="0.01" class="form-control" name="buyout" min="0" placeholder="Defina um valor de venda do item (opcional)">
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Portes</label>
+                            <div class="col-sm-10">
+                                <input {if isset($AUCTION.shipping_cost)}value="{$AUCTION.shipping_cost}"{/if}
+                                       type="number" step="0.01" class="form-control" name="shipping_cost" min="0" placeholder="Custos de envio (opcional)">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Tempo de fim</label>
+                            <div class="col-sm-10">
+                                <input {if isset($AUCTION.end_time)}value="{$AUCTION.end_time}"{/if}
+                                       size="16" type="datetime" name="end_time" readonly class="form-control form_datetime" required>
+                            </div>
+                        </div>
+
+
+
+                        <script type="text/javascript">
+                            $(".form_datetime").datetimepicker({
+                                format: "yyyy-mm-dd hh:ii",
+                                language:'pt'
+                            });
+                        </script>
+
                     </div>
                 </fieldset>
-                <fieldset>
+                <fieldset id="characteristics-fieldset" style="display:none;">
                     <legend>Carateristicas </legend>
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Nº quartos</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" placeholder="Número de quartos que a casa possui">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                                <label class="col-sm-2 control-label">Área</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control" placeholder="Número em metros quadrados correspondente a area habitavel do edificio">
-                            </div>
-                        </div>
+                    <div class="form-horizontal" id="characteristics-inputs-section">
                     </div>
                 </fieldset>
+                <div style="display:none;" id="characteristic-form-group-template">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10 input-area checkbox radio">
+                        </div>
+                    </div>
+                </div>
+
 
                 <fieldset>
                     <legend>Galeria de fotografias </legend>
 
+                    <input id="photos-input" name="photo" type="file" multiple="true" class="file-loading">
 
+                </fieldset>
 
-
-                    <input id="photos-input" name="photos[]" type="file" multiple=true class="file-loading">
-                    <!-- <script type="text/javascrit"  src="{$BASE_URL}/js/photos-upload.js"> </script>-->
-
-                    <script>
-                        {literal}
-                        $("#photos-input").fileinput({
-                            uploadUrl: "/leiloes/proto/api/auction-prev.php",
-                            uploadAsync: true,
-                            minFileCount: 0,
-                            maxFileCount: 5,
-                            overwriteInitial: false,
-                           /** initialPreview: [
-                                "<img src=\'http://placeimg.com/200/150/nature/1\'>",
-                                "<img src=\'http://placeimg.com/200/150/nature/2\'>",
-                            ],
-                            initialPreviewConfig: [
-                                {caption: "Food-1.jpg", url: "/leiloes/proto/api/auction-prev.php", key: 1},
-                                {caption: "Food-2.jpg", url: "/leiloes/proto/api/auction-prev.php", key: 2},
-                            ]**/
-                        });
-                        $("#photos-input").on("filepredelete", function() {
-                            var abort = true;
-                            if (confirm("Are you sure you want to delete this image?")) {
-                                abort = false;
-                            }
-                            return abort;
-                        });
-
-                        {/literal}
-                    </script>
-<style>
-    .fileinput-remove{
-        display:none;
-    }
-
-</style>
-
-                   <!-- {SECTION name=xxx loop=5}
-                    <div class="base-container upper photoprev" style="background-image:url('{$BASE_URL}images/item-prev.jpg')">
-                        <span class="glyphicon glyphicon-remove"></span></div>
-                     {/SECTION}
-                    <div style="clear:both;margin:5px;padding-top:10px;">
-                        <input type="button" value="Adicionar fotografias" class="btn btn-primary    ">
-                    </div>-->
-
+                <script type="text/javascript" src="{$BASE_URL}/js/auction.php"></script>
                 <fieldset>
                     <legend>Descriçao </legend>
                     <form method="post">
-                        <textarea class="editor" name="description"></textarea>
+                        <textarea class="editor" name="item_description">{if isset($AUCTION.item_description)}{$AUCTION.item_description}{/if}</textarea>
                     </form>
+
+                    <div style="text-align:right;padding:20px 0 5px">
+                        <!--<input type="submit" name="delete" value="Eliminar" class="btn btn-default"> -->
+                        <input type="submit" name="save" value="Guardar" class="btn btn-default">
+                        <input type="submit" name="save_and_preview" value="Guardar e pré-visualizar" class="btn btn-primary    ">
+                        <input type="submit" name="publish" value="Publicar" class="btn btn-default">
+                    </div>
                 </fieldset>
 
-                <div style="text-align:right;padding:20px 0 5px">
-                    <input type="button" value="Eliminar" class="btn btn-default">
-                    <input type="button" value="Guardar" class="btn btn-default">
-                    <input type="button" value="Guardar e pré-visualizar" class="btn btn-primary    ">
-                    <input type="button" value="Publicar" class="btn btn-default">
-                </div>
             </form>
         </div>
     </div>

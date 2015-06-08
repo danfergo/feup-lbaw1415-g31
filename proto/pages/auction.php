@@ -5,9 +5,10 @@ include_once("$BASE_DIR/database/auction.php");
 
 // verification of parameters
 
-if(!isset($_GET['auction'])){
+if(!isset($_GET['auction']) || is_nan($GET_['auction'])){
     header("Location: index.php");
 }
+
 
 $auction = getAuctionById($_GET['auction']) OR die("auction does not exist");
 
