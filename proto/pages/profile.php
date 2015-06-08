@@ -16,15 +16,15 @@ if(!($user=getUser($userId))){
     die("1 nao existe user");// TODO filizar se nao existe
 }
 
-$storeId=isset($_GET['store']) ? $_GET["store"] :getStoreByUser($userId) ;
+$store=isset($_GET['store']) ? $_GET["store"] :getStoreByUser($userId) ;
 
-if(!$storeId){
+if(!$store){
     die("1 nao existe store $userId");// TODO filizar se nao existe
 }
 
-$auctions= isset($_GET['auction']) ? $_GET["auction"] :getAuctionActiveByStore($storeId["store_id"]) ; // vai buscar o user
-$auctionBuyed= isset($_GET['auction']) ? $_GET["auction"] :getAuctionBuyer($storeId["owner"]) ; // vai buscar o user
-$auctionSeller= isset($_GET['auction']) ? $_GET["auction"] :getAuctionSeller($storeId["store_id"]) ; // vai buscar o user
+$auctions= isset($_GET['auction']) ? $_GET["auction"] :getAuctionActiveByStore($store["store_id"]) ; // vai buscar o user
+$auctionBuyed= isset($_GET['auction']) ? $_GET["auction"] :getAuctionBuyer($store["owner"]) ; // vai buscar o user
+$auctionSeller= isset($_GET['auction']) ? $_GET["auction"] :getAuctionSeller($store["store_id"]) ; // vai buscar o user
 
 $smarty->assign('auctionSeller',$auctionSeller);// funcao que liga ao php
 $smarty->assign('auctionBuyed',$auctionBuyed);// funcao que liga ao php
