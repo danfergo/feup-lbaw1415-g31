@@ -32,3 +32,4 @@ if(setSettings($userId,$_POST['namenew'],$_POST['emailnew'],$_POST['passwordnew'
     header("Location: $BASE_URL" . 'pages/settings.php');
 }
 */
+header("Location: $BASE_URL" . 'pages/conversation.php');

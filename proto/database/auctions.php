@@ -112,12 +112,6 @@ function getCategories($parent = null)
 
 }
 
-
-
-
-
-
-
 function getCategoryCharacteristics($categoryId){
     global $conn;
 
@@ -131,3 +125,16 @@ function getCategoryCharacteristics($categoryId){
     }
    return $categories;
 }
+
+function getAuctiontoPay($userId){
+    global $conn;
+    $stmt = $conn->prepare("SELECT * FROM auction WHERE auction.buyer = ? AND payment_time>now() AND now()<auction.end_time ");
+
+    $stmt->execute(array($userId));
+    return $stmt->fetch();
+}
+
+
+
+
+

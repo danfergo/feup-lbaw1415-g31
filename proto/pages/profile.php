@@ -25,7 +25,9 @@ if(!$store){
 $auctions= isset($_GET['auction']) ? $_GET["auction"] :getAuctionActiveByStore($store["store_id"]) ; // vai buscar o user
 $auctionBuyed= isset($_GET['auction']) ? $_GET["auction"] :getAuctionBuyer($store["owner"]) ; // vai buscar o user
 $auctionSeller= isset($_GET['auction']) ? $_GET["auction"] :getAuctionSeller($store["store_id"]) ; // vai buscar o user
+$auctionInBuy= isset($_GET['auction']) ? $_GET["auction"] :getAuctiontoPay($userId) ;
 
+$smarty->assign('$auctionInBuy',$auctionInBuy);// funcao que liga ao php
 $smarty->assign('auctionSeller',$auctionSeller);// funcao que liga ao php
 $smarty->assign('auctionBuyed',$auctionBuyed);// funcao que liga ao php
 $smarty->assign('auctions',$auctions);// funcao que liga ao php
