@@ -26,11 +26,11 @@ function auctionNew($title,$pass,$email,$activationCode) {
 
 
 function auctionEnd($auctionId){
-/*    global $conn;
+    /*    global $conn;
 
-    $stmt = $conn->prepare("DELETE FROM User_not_active WHERE user_id = ? AND activation_code = ?");
-    $stmt->execute(array($userId,$activationCode));
-    return $stmt->rowCount() > 0;*/
+        $stmt = $conn->prepare("DELETE FROM User_not_active WHERE user_id = ? AND activation_code = ?");
+        $stmt->execute(array($userId,$activationCode));
+        return $stmt->rowCount() > 0;*/
 }
 
 function getAuctionActiveByStore($storeId){
@@ -74,69 +74,116 @@ function getAuctionSeller($storeId){
 }
 
 function viewIndex()
+{
+    global $conn;
+
+    // WHERE state = "active"
+    $stmt = $conn->prepare("SELECT * FROM auction_view ORDER BY page_rank DESC LIMIT ?   ");
+    $stmt->execute(array(50));
+    $auctions = null;
+    while($row = $stmt->fetch() )
     {
-        global $conn;
-
-        // WHERE state = "active"
-        $stmt = $conn->prepare("SELECT * FROM auction_view ORDER BY page_rank DESC LIMIT ?   ");
-        $stmt->execute(array(50));
-        $auctions = null;
-        while($row = $stmt->fetch() )
-        {
-            $row['time_remaining'] =
-            $auctions[] = $row;
-        }
-       return $auctions;
-
+        $auctions[] = $row;
     }
+    return $auctions;
+
+}
 
 
-function getCategories($parent = null)
+function getCategories($parent = null, $recursive = true)
 {
     global $conn;
 
     if (is_null($parent)) {
         $stmt = $conn->prepare("SELECT * FROM category WHERE parent_category ISNULL");
         $stmt->execute();
-    } else {
+    }else if($parent === 'all') {
+        $stmt = $conn->prepare("SELECT * FROM category");
+        $stmt->execute();
+    }else {
         $stmt = $conn->prepare("SELECT * FROM category WHERE parent_category = ?");
         $stmt->execute(array($parent));
     }
 
     $categories = array();
     while($row = $stmt->fetch()){
-        $row['sub_categories'] = getCategories($row['category_id']);
+        if($recursive) $row['sub_categories'] = getCategories($row['category_id']);
         $categories[] = $row;
     }
     return $categories;
 
 }
 
+
+/*
+ * @param $categoryId - id of category, null for all.
+ * @return $stmt->fetchAll();
+ *          array({
+ *                  id : <primary_key>,
+ *                  name : <string>,
+ *                  type : <bool | enum | num | string >,
+ *                  ...
+ *                  (if type equals enum) options : array(value1,value2,value3)
+ *
+ */
 function getCategoryCharacteristics($categoryId){
     global $conn;
 
-    $stmt = $conn->prepare("
-            ((SELECT * FROM caracteristc WHERE category_id AND is_bool = true)");
-    $stmt->execute();
+    $stmt = $conn->prepare("SELECT * FROM category WHERE category_id = ?");
+    $stmt->execute(array($categoryId));
+    $r = $stmt->fetch();
 
-    $ret = array();
-    while($row = $stmt->fetch()){
-        $ret[] = $row;
+    // recursive stuff to get parent characteristics.
+    $characteristics =  $r['parent_category'] !== null ? getCategoryCharacteristics($r['parent_category']) : array();
+
+
+    $query = "SELECT * FROM characteristics_view ";
+    if($categoryId != null) $query .= "WHERE category_id =  ? ";
+    $query .= "ORDER BY characteristic_id ASC, position ASC";
+
+    $stmt = $conn->prepare($query);
+
+    if($categoryId != null) $stmt->execute(array($categoryId)); else $stmt->execute();
+
+    $appendTo = -1;
+    $last = null;
+    while($r = $stmt->fetch()){
+
+        if($appendTo == $r['characteristic_id']){
+            $last['options'][$r['position']] = $r['value'];
+        }else{
+            if($last != null) $characteristics[] = $last;
+
+            $characteristic = array(
+                'id' => $r['characteristic_id'],
+                'cat_id' => $r['category_id'],
+                'name' => $r['name']
+            );
+
+            $isEnum = $r['num_units'] === null;
+            if($isEnum) {
+                $characteristic['type'] = 'enum';
+                $characteristic['min'] = $r['min_o'];
+                $characteristic['max'] = $r['max_o'];
+                $characteristic['options'] = array();
+                $characteristic['options'][$r['position']] = $r['value'];
+
+                $appendTo = $characteristic['id'];
+                $last = $characteristic;
+            }else{
+                $characteristic['type'] = 'num';
+                $characteristic['min'] = $r['min'];
+                $characteristic['max'] = $r['max'];
+                $characteristic['units'] = $r['num_units'];
+                $characteristic['precision'] = $r['num_precision'];
+
+
+                $characteristics[] = $characteristic;
+                $last = null;
+            }
+        }
+
     }
-   return $categories;
+    if($last != null) $characteristics[] = $last;
+    return $characteristics;
 }
-
-function getAuctiontoPay($userId){
-    global $conn;
-    $stmt = $conn->prepare("SELECT *,current_bid,usr.name AS user_name,store.name AS store_name
-                            FROM auction,auction_view,usr,store
-                            WHERE auction.buyer = ? AND payment_time>now() AND now()<auction.end_time");
-
-    $stmt->execute(array($userId));
-    return $stmt->fetch();
-}
-
-
-
-
-

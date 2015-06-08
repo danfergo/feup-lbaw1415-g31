@@ -43,7 +43,7 @@
                             <label class="col-sm-2 control-label">Base de licitação</label>
                             <div class="col-sm-10">
                                 <input {if isset($AUCTION.auction_base)}value="{$AUCTION.auction_base}"{/if}
-                                       type="number" class="form-control" name="auction_base" min="0" placeholder="Valor base do item a ser leiloado" step="0.01" required>
+                                        type="number" class="form-control" name="auction_base" min="0" placeholder="Valor base do item a ser leiloado" step="0.01" required>
                             </div>
                         </div>
 
@@ -52,7 +52,7 @@
                             <label class="col-sm-2 control-label">Comprar já</label>
                             <div class="col-sm-10">
                                 <input {if isset($AUCTION.buyout)}value="{$AUCTION.buyout}"{/if}
-                                       type="number" step="0.01" class="form-control" name="buyout" min="0" placeholder="Defina um valor de venda do item (opcional)">
+                                        type="number" step="0.01" class="form-control" name="buyout" min="0" placeholder="Defina um valor de venda do item (opcional)">
                             </div>
                         </div>
 
@@ -60,7 +60,7 @@
                             <label class="col-sm-2 control-label">Portes</label>
                             <div class="col-sm-10">
                                 <input {if isset($AUCTION.shipping_cost)}value="{$AUCTION.shipping_cost}"{/if}
-                                       type="number" step="0.01" class="form-control" name="shipping_cost" min="0" placeholder="Custos de envio (opcional)">
+                                        type="number" step="0.01" class="form-control" name="shipping_cost" min="0" placeholder="Custos de envio (opcional)">
                             </div>
                         </div>
 
@@ -68,7 +68,7 @@
                             <label class="col-sm-2 control-label">Tempo de fim</label>
                             <div class="col-sm-10">
                                 <input {if isset($AUCTION.end_time)}value="{$AUCTION.end_time}"{/if}
-                                       size="16" type="datetime" name="end_time" readonly class="form-control form_datetime" required>
+                                        size="16" type="datetime" name="end_time" readonly class="form-control form_datetime" required>
                             </div>
                         </div>
 
@@ -104,19 +104,19 @@
 
                 </fieldset>
 
-                <script type="text/javascript" src="{$BASE_URL}/js/auction.php"></script>
+                    <script type="text/javascript" src="{$BASE_URL}/js/auction.php"></script>
                 <fieldset>
                     <legend>Descriçao </legend>
                     <form method="post">
                         <textarea class="editor" name="item_description">{if isset($AUCTION.item_description)}{$AUCTION.item_description}{/if}</textarea>
                     </form>
 
-                    <div style="text-align:right;padding:20px 0 5px">
-                        <!--<input type="submit" name="delete" value="Eliminar" class="btn btn-default"> -->
-                        <input type="submit" name="save" value="Guardar" class="btn btn-default">
-                        <input type="submit" name="save_and_preview" value="Guardar e pré-visualizar" class="btn btn-primary    ">
-                        <input type="submit" name="publish" value="Publicar" class="btn btn-default">
-                    </div>
+                <div style="text-align:right;padding:20px 0 5px">
+                    <!--<input type="submit" name="delete" value="Eliminar" class="btn btn-default"> -->
+                    <input type="submit" name="save" value="Guardar" class="btn btn-default">
+                    <input type="submit" name="save_and_preview" value="Guardar e pré-visualizar" class="btn btn-primary    ">
+                    <input type="submit" name="publish" value="Publicar" class="btn btn-default">
+                </div>
                 </fieldset>
 
             </form>

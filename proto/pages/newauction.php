@@ -13,7 +13,7 @@ if(isset($_GET['auction'])){
         $a = getAuctionById($_GET['auction']);
         $myStore = getStoreByUser(getUserId());
         if($a['store'] != $myStore['store_id'] ){
-            header('Location: index.php');
+           header('Location: index.php');
         }
         var_dump($a);
         $smarty->assign('AUCTION', $a);
