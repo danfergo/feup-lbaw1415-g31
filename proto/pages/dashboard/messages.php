@@ -15,7 +15,8 @@ if(!$storeId){
 }
 
 if(!($conversation=getUserConversation($userId,$storeId["store_id"]))){
-    die("nao exitem conversas");// TODO filizar se nao existe
+    $_SESSION['error_messages'][] = 'erro na alteração de definições';
+    header("Location: $BASE_URL" . 'pages/profile.php');
 }
 
 $smarty->assign('conversations',$conversation);// funcao que liga ao php

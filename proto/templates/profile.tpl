@@ -86,18 +86,6 @@
 
         </div>
     </div>
-    <div class="col-xs-7">
 
-        <h2>Leilões a apagar</h2>
-        <div class="row">
-            {foreach from=$auctionInBuy item=auctionInBuys}
-                <div class="col-xs-6" style="margin-bottom: 15px;">
-                    {include file='notifications/item-tile.tpl'}
-                </div>
-            {/foreach}
-
-
-        </div>
-    </div>
 </div>
 {include file='common/footer.tpl'}

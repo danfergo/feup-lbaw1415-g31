@@ -1,5 +1,5 @@
 <div class="container">
-    <form class="form-horizontal" role="form" action="{$BASE_URL}actions/settings.php" method="post">
+    <form class="form-horizontal" role="form" action="{$BASE_URL}actions/payment.php" method="post">
         <fieldset>
             <legend>Payment</legend>
             <div class="form-group">
