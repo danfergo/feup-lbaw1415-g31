@@ -9,4 +9,3 @@ function getUserId(){
 function getAuctionId(){
     return isset($_SESSION['auction_id'])? $_SESSION['auction_id'] : false ;
 }
-

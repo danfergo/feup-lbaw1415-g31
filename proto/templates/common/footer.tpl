@@ -1,24 +1,23 @@
 <div class="clearfix"></div>
 
 {if $ISADMIN}
-<div style="text-align:center;padding-top:40px;">
-  <a href="index.php?loggedin&adminmode">
-    <button type="button" class="btn btn-sm btn-default" >
-      <span class="glyphicon glyphicon-wrench"> </span> Ativar modo de administraçao
-    </button>
-  </a>
-</div>
+  <div style="text-align:center;padding-top:40px;">
+    <a href="{$BASE_URL}actions/admin.php?">
+      <button type="button" class="btn btn-sm btn-default" >
+        <span class="glyphicon glyphicon-wrench"> </span> Ativar modo de administraçao
+      </button>
+    </a>
+  </div>
 
 {elseif $ADMINMODE}
-<div style="text-align:center;padding-top:40px;">
-  <a href="index.php?loggedin&admin">
-    <button type="button" class="btn btn-sm btn-default" >
-      <span class="glyphicon glyphicon-wrench"> </span> Desligar modo de administraçao
-    </button>
-  </a>
-</div>
-{/if}
-
+  <div style="text-align:center;padding-top:40px;">
+    <a href="index.php?loggedin&admin">
+      <button type="submit" class="btn btn-sm btn-default" >
+        <span class="glyphicon glyphicon-wrench"> </span> Desligar modo de administraçao
+      </button>
+    </a>
+  </div>
+  {/if}
 <footer style="padding:30px 0;">
   <p style="text-align:right;margin:15px;margin-bottom:0;">design and developed by: D-TEAM @ LBAW/MIEIC-FEUP 2015</p>
 
