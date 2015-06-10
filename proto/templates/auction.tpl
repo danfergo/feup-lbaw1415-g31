@@ -3,8 +3,14 @@
 
 <div class="container-fluid page-wrapper">
 
-
     <h1>{$auction.item_title}</h1>
+    {if $ADMINMODE}
+        <form>
+            <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+            </button>
+        </form>
+    {/if}
 
     <div id="auction-carousel" class="carousel slide base-container upper" data-ride="carousel">
         <!-- Indicators -->
@@ -87,7 +93,7 @@
                                             <h4> Licitar </h4>
                                         </div>
                                     <div class="input-group" >
-                                        <input type="flaot" class="form-control" placeholder="{$auction.current_bid}" aria-describedby="basic-addon1">
+                                        <input type="float" class="form-control" placeholder="{$auction.current_bid}" aria-describedby="basic-addon1">
                                             <span class="input-group-btn">
                                                 <button class="btn btn-default" type="button">Submeter</button>
                                             </span>

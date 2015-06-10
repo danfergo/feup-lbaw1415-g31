@@ -31,4 +31,7 @@ $smarty->assign('auctionSeller',$auctionSeller);// funcao que liga ao php
 $smarty->assign('auctionBuyed',$auctionBuyed);// funcao que liga ao php
 $smarty->assign('auctions',$auctions);// funcao que liga ao php
 $smarty->assign('user',$user);// funcao que liga ao php
-$smarty->display('profile.tpl');
+if($_SESSION['admin_mode']){
+    $smarty->display('admin.tpl');
+}else
+    $smarty->display('profile.tpl');

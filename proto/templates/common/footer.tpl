@@ -1,6 +1,7 @@
 <div class="clearfix"></div>
 
-{if $ISADMIN}
+
+{if $ISADMIN && !$ADMINMODE}
   <div style="text-align:center;padding-top:40px;">
     <a href="{$BASE_URL}actions/admin.php?">
       <button type="button" class="btn btn-sm btn-default" >
@@ -8,10 +9,9 @@
       </button>
     </a>
   </div>
-
 {elseif $ADMINMODE}
   <div style="text-align:center;padding-top:40px;">
-    <a href="index.php?loggedin&admin">
+    <a href="{$BASE_URL}actions/admin.php?">
       <button type="submit" class="btn btn-sm btn-default" >
         <span class="glyphicon glyphicon-wrench"> </span> Desligar modo de administraçao
       </button>
