@@ -1,6 +1,6 @@
-<a href="auction.php"><div style="background-image:url('../images/item-prev.jpg');" class="prev"> </div></a>
+<a href="../pages/auction.php?auction_id={$auction.auction_id}"><div style="background-image:url('../images/item-prev.jpg');" class="prev"> </div></a>
 <div class="details">         
-    <a href="auction.php">
+    <a href="../pages/auction.php?auction_id={$auction.auction_id}">
     <div class="costs">
         <div class="container">
             <!-- Trigger the modal with a button -->

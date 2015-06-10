@@ -14,7 +14,7 @@ if(!$userId) {
 
 $auctions= isset($_GET['auction']) ? $_GET["auction"] :getAuctions() ;
 $users= getAuctions($userId) ;
-
+var_dump($users);
 $smarty->assign('users',$users);// funcao que liga ao php
 $smarty->assign('auctions',$auctions);// funcao que liga ao php
 

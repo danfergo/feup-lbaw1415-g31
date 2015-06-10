@@ -38,7 +38,7 @@
         <h2>Utilizadores</h2>
         {foreach from=$users item=user}
             <div  style="margin-bottom: 15px;">
-              <a>teste</a>
+                {include file='notifications/user-item.tpl'}
             </div>
         {/foreach}
 
