@@ -2,14 +2,13 @@
 {include file='common/header.tpl'}
 
 <div class="container-fluid page-wrapper">
-
     <h1>{$auction.item_title}</h1>
     {if $ADMINMODE}
-        <form>
-            <button type="button" class="btn btn-default btn-lg">
+            <a href="{$BASE_URL}actions/admintools.php?what=0&id={$auction.auction_id}">
+                <button type="button" class="btn btn-default btn-lg">
                 <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
             </button>
-        </form>
+                </a>
     {/if}
 
     <div id="auction-carousel" class="carousel slide base-container upper" data-ride="carousel">
@@ -210,6 +209,5 @@
         </div>
     </div>
 {/if}
-
 </div>
 {include file='common/footer.tpl'}

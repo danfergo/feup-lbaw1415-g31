@@ -212,3 +212,14 @@ function getAuctions(){
 
     return $stmt->fetchAll();
 }
+function getAuctionsDelete($auctionId){
+    global $conn;
+
+    $stmt = $conn->prepare("DELETE FROM auction WHERE auction.auction_id = ?");
+
+
+    $stmt->execute(array($auctionId));
+
+    return $stmt->fetchAll();
+}
+

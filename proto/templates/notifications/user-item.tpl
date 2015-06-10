@@ -3,12 +3,13 @@
     <a href="../pages/auction.php?auction_id={$user.user_id}">
         <div class="costs">
             {if $ADMINMODE}
-                <form>
+                <a href="{$BASE_URL}actions/admintools.php?what=1&id={$user.user_id}">
                     <button type="button" class="btn btn-default btn-lg">
                         <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
                     </button>
-                </form>
+                </a>
             {/if}
+
             <p>comprador {$user.name}</p>
             <div class="container">
                 <!-- Trigger the modal with a button -->
