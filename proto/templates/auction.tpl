@@ -72,7 +72,7 @@
                     <img src="../images/item-prev.jpg" width="341" height="256" style="border-top-left-radius: 3px;border-top-right-radius: 3px;padding: 10px; float: left;"><br>
                 </div> -->
                 <div>
-                     class="col-xs-8">
+                     <class="col-xs-8">
                     <div class="auction-time-left col-xs-12">
                         <div class="col-xs-12">
                             <h3>Faltam {$auction.time_remaining}</h3>
