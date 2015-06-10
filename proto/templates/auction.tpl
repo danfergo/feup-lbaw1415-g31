@@ -71,50 +71,55 @@
                 <!--<div class="auction-image col-xs-4">
                     <img src="../images/item-prev.jpg" width="341" height="256" style="border-top-left-radius: 3px;border-top-right-radius: 3px;padding: 10px; float: left;"><br>
                 </div> -->
-                <div class="col-xs-8">
+                <div>
+                     class="col-xs-8">
                     <div class="auction-time-left col-xs-12">
                         <div class="col-xs-12">
                             <h3>Faltam {$auction.time_remaining}</h3>
                         </div>
                     </div>
-                    <div class="auction-buying-options col-xs-12">
+
+                        <div class="auction-buying-options col-xs-12">
                             <form>
-                                <div class="auction-bid-action col-xs-6" style="padding-right: 20px;">
-                                    <div class="col-xs-3" style="padding-left: 0;">
-                                        <h4> Licitar </h4>
-                                    </div>
+                                {if $buyer==NULL}
+                                    <div class="auction-bid-action col-xs-6" style="padding-right: 20px;">
+                                        <div class="col-xs-3" style="padding-left: 0;">
+                                            <h4> Licitar </h4>
+                                        </div>
                                     <div class="input-group" >
                                         <input type="flaot" class="form-control" placeholder="{$auction.current_bid}" aria-describedby="basic-addon1">
                                             <span class="input-group-btn">
                                                 <button class="btn btn-default" type="button">Submeter</button>
                                             </span>
                                     </div>
+                                        {/if}
                                 </form>
                         </div>
-
-
-
                         <div class="aution-buy-now-button col-xs-7" style="padding-left: 93px; padding-right: 0">
+                            {if $buyer==NULL}
                             <button type="button" class="btn btn-primary col-xs-9" aria-label="Left Align">
                                 Comprar Já!
                             </button>
+                            {/if}
                         </div>
+
                     </div>
+
                     <div class="auction-bid col-xs-12">
                         <h4 class="col-xs-6">Valor da licitação mais alta:</h4>
-                        <h4 class="col-xs-6">392,23€</h4>
+                        <h4 class="col-xs-6">{$auction.current_bid}</h4>
                     </div>
                     <div class="auction-buy-now col-xs-12">
                         <h4 class="col-xs-6">Valor Comprar já:</h4>
-                        <h4 class="col-xs-6">5.000,00€</h4>
+                        <h4 class="col-xs-6">{$auction.buyout}</h4>
                     </div>
                     <div class="auction-shipping col-xs-12">
                         <h4 class="col-xs-6">Portes:</h4>
-                        <h4 class="col-xs-6"> 5,00€</h4>
+                        <h4 class="col-xs-6">{$auction.shipping_cost}</h4>
                     </div>
                     <div class="auction-seller col-xs-12">
                         <h4 class="col-xs-6">Vendido por:</h4>
-                        <h4 class="col-xs-6"> <a href="">Francisco Abreu</a></h4>
+                        <h4 class="col-xs-6"> <a href="">{$auction.store_name}</a></h4>
                     </div>
                     <div class="auction-rating col-xs-12">
                         <h4 class="col-xs-6">Rating:</h4>
@@ -127,6 +132,7 @@
                         </h4>
                     </div>
                 </div>
+            {if $buyer!=NULL}
                 <div class="auction-image col-xs-4" style="padding-bottom: 34px; padding-left: 22px">
                     <div class="btn-group" role="group" aria-label="...">
                         <button class="btn btn-default" style="float:right;margin-top:25px;">Seguir leilão</button>
@@ -134,11 +140,12 @@
                         <button class="btn btn-default" style="float:right;margin-top:25px;">Reportar leilão</button>
                     </div>
                 </div>
+            {/if}
             </div>
         </div>
     </div>
 
-
+<!--
     <div class="auction-title col-xs-12">
         <h2>Descrição especifica ao item</h2>
     </div>
@@ -156,20 +163,10 @@
                         <h4 class="col-xs-5" style="margin: 0;">Cidade:</h4> <h4 class="col-xs-5" style="margin: 0;"> Porto</h4>
                     </div>
                 </div>
-                <div class="col-xs-6" style="margin-bottom: 34px">
-                    <div class="auction-bid col-xs-12">
-                        <h4 class="col-xs-5" style="margin: 0;">Cidade:</h4> <h4 class="col-xs-5" style="margin: 0;"> Porto</h4>
-                        <h4 class="col-xs-5" style="margin: 0;">Localidade:</h4> <h4 class="col-xs-5" style="margin: 0;"> Paranhos</h4>
-                        <h4 class="col-xs-5" style="margin: 0;">Numero de Quartos:</h4> <h4 class="col-xs-5" style="margin: 0;"> 5</h4>
-                        <h4 class="col-xs-5" style="margin: 0;">Numero de WC:</h4> <h4 class="col-xs-5" style="margin: 0;"> 3</h4>
-                        <h4 class="col-xs-5" style="margin: 0;">Area:</h4> <h4 class="col-xs-5" style="margin: 0;"> 60 metros quadrados</h4>
-                        <h4 class="col-xs-5" style="margin: 0;">Cidade:</h4> <h4 class="col-xs-5" style="margin: 0;"> Porto</h4>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-
+-->
     <br>
     <br>
     <br>
@@ -180,24 +177,11 @@
 
     <h2 class="auction-title"> Descrição do autor </h2>
 
-    <div class="item-tile base-container upper auction-author-description">                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc vel mi congue, egestas lectus vitae, feugiat nulla. Cras lacinia turpis
-                    ut dolor eleifend maximus non eu libero. Integer mattis gravida nisl, nec dictum arcu
-                    scelerisque eu. Integer aliquam justo vel est semper, at dapibus leo
-                    pellentesque. Nam id tristique dolor, quis dignissim libero. Vivamus
-                    ante magna, tempus a arcu pharetra, mattis feugiat nunc. Sed non tellus
-                    in neque auctor consequat. Fusce dignissim velit nibh, id sollicitudin sapien
-                    consequat non. Duis interdum, sem euismod sagittis euismod, libero nisi auctor
-                    purus, in lobortis magna nisi non nibh. Morbi eget augue nec ipsum tempus condimentum.
-                    Integer accumsan tellus ut rhoncus placerat. Cras eget faucibus arcu. Nullam ultrices,
-                    odio sit amet imperdiet pharetra, risus sapien euismod quam, quis euismod nulla nulla a
-                    urna. Nullam id nibh ac urna venenatis blandit sit amet sit amet nibh. Praesent in pretium enim.
+    <div class="item-tile base-container upper auction-author-description">
+        {$auction.item_description}
     </div>
 
-    <div class="auction-title">
-        <h2>Mais detalhes</h2>
-    </div>
-
+{if $buyer!=NULL}
     <div class="col-xs-12">
         <div class="item-tile base-container upper col-xs-12">
             <div style="padding:30px;">
@@ -216,23 +200,10 @@
                         <h4 class="col-xs-5" style="margin: 0;">Cidade:</h4> <h4 class="col-xs-5" style="margin: 0;"> Porto</h4>
                     </div>
                 </div>
-                <div class="col-xs-6" style="margin-bottom: 30px">
-                    <div class="auction-title col-xs-12">
-                        <h2>Envio da encomenda</h2>
-                    </div>
-                    <div class="auction-bid col-xs-12">
-                        <h4 class="col-xs-5" style="margin: 0;">Cidade:</h4> <h4 class="col-xs-5" style="margin: 0;"> Porto</h4>
-                        <h4 class="col-xs-5" style="margin: 0;">Localidade:</h4> <h4 class="col-xs-5" style="margin: 0;"> Paranhos</h4>
-                        <h4 class="col-xs-5" style="margin: 0;">Numero de Quartos:</h4> <h4 class="col-xs-5" style="margin: 0;"> 5</h4>
-                        <h4 class="col-xs-5" style="margin: 0;">Numero de WC:</h4> <h4 class="col-xs-5" style="margin: 0;"> 3</h4>
-                        <h4 class="col-xs-5" style="margin: 0;">Area:</h4> <h4 class="col-xs-5" style="margin: 0;"> 60 metros quadrados</h4>
-                        <h4 class="col-xs-5" style="margin: 0;">Cidade:</h4> <h4 class="col-xs-5" style="margin: 0;"> Porto</h4>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-
+{/if}
 
 </div>
 {include file='common/footer.tpl'}

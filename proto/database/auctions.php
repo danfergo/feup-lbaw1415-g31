@@ -187,3 +187,16 @@ function getCategoryCharacteristics($categoryId){
     if($last != null) $characteristics[] = $last;
     return $characteristics;
 }
+function getAuctionById($auctionId){
+    global $conn;
+
+    $stmt = $conn->prepare("SELECT *,store.name AS store_name
+                            FROM auction,auction_view,store
+                            WHERE auction.auction_id = ? AND auction_view.auction_id=auction.auction_id AND store.store_id=auction.store");
+
+
+
+    $stmt->execute(array($auctionId));
+
+    return $stmt->fetchAll();
+}
