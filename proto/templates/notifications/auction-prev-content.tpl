@@ -1,4 +1,4 @@
-<a href="../pages/auction.php?auction_id={$auction.auction_id}"><div style="background-image:url('../images/item-prev.jpg');" class="prev"> </div></a>
+<a href="../pages/auction.php?auction_id={$auction.auction_id}"><div style="background-image:url({$BASE_URL}{$auction.photo});" class="prev"> </div></a>
 <a href="../pages/auction.php?auction_id={$auction.auction_id}" >
 <div class="details" >
     <div class="title">{$auction.item_title}</div>

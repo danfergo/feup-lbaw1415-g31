@@ -1,5 +1,5 @@
 <?php
-  session_set_cookie_params(3600, '/leiloes/proto/  '); //FIXME
+  session_set_cookie_params(3600, '/feup-lbaw1415-g31/proto/  '); //FIXME
   session_start();
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
@@ -8,12 +8,17 @@
   error_reporting(E_ALL);
 
 
-  $BASE_DIR = '/var/www/html/leiloes/proto/'; //FIXME
-  $BASE_URL = '/leiloes/proto/'; //FIXME
+  $BASE_DIR = '/var/www/html/feup-lbaw1415-g31/proto/'; //FIXME
+  $BASE_URL = '/feup-lbaw1415-g31/proto/'; //FIXME
 
-  $conn = new PDO('pgsql:host=vdbm.fe.up.pt;dbname=lbaw1431', 'lbaw1431', 'pY870eu3'); //FIXME
-  $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  try{
+    $conn = new PDO('pgsql:host=vdbm.fe.up.pt;dbname=lbaw1431', 'lbaw1431', 'pY870eu3'); //FIXME
+    $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  }catch(Exception $e){
+    die ("we are offline");
+  }
 
   $conn->exec('SET SCHEMA \'proto\''); //FIXME
 
@@ -32,9 +37,10 @@
 
   $smarty->assign('LOGGEDIN', isset($_SESSION['user_id']));
   $smarty->assign('ISADMIN', isset($_SESSION['is_admin']) && $_SESSION['is_admin']);
-  $smarty->assign('ADMINMODE', false);
+  $smarty->assign('ADMINMODE', isset($_SESSION['admin_mode']) && $_SESSION['admin_mode']);
 
-
+  require_once($BASE_DIR."/database/auctions.php");
+  $smarty->assign('categories', getCategories(null));
 
   unset($_SESSION['success_messages']);
   unset($_SESSION['error_messages']);  

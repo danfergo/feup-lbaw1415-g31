@@ -1,6 +1,7 @@
 <?php
+
     function search($search, $lowerLimit, $higherLimit, $order) {
-        global $conn;
+        global $conn, $BASE_DIR;
 
         $stmt = $conn->prepare("SELECT *
                                     FROM auction_view, auction
@@ -13,7 +14,17 @@
 
         $stmt->execute(array('%' . $search . '%', '%' . $search . '%', $lowerLimit, $higherLimit));
 
-        return $stmt->fetchAll();
+        $auctions = array();
+        while($row = $stmt->fetch() )
+        {
+            if(file_exists($BASE_DIR . 'images/auction/' . $row['auction_id'])) {
+                $row['photo'] = 'images/auction/' . $row['auction_id'] . '/' .array_values(array_diff(scandir($BASE_DIR . 'images/auction/' . $row['auction_id']), array('..', '.')))[0];
+            }else $row['photo'] = 'images/item-prev.jpg';
+            $auctions[] = $row;
+        }
+        return $auctions;
+
+        return $auctions;
     }
 
     function order($order){

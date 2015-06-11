@@ -34,17 +34,25 @@ function auctionEnd($auctionId){
 }
 
 function getAuctionActiveByStore($storeId){
-    global $conn;
+    global $conn,$BASE_DIR;
 
     $stmt = $conn->prepare("SELECT *,current_bid
                             FROM auction,auction_view
                             WHERE auction.store = ? AND now()<auction.end_time AND auction_view.auction_id=auction.auction_id ");//AND Auction.auction_id = auction_view.auction_id");
 
-
-
     $stmt->execute(array($storeId));
 
-    return $stmt->fetchAll();
+    $auctions = array();
+    while($row = $stmt->fetch() )
+    {
+        if(file_exists($BASE_DIR . 'images/auction/' . $row['auction_id'])) {
+            $row['photo'] = 'images/auction/' . $row['auction_id'] . '/' .array_values(array_diff(scandir($BASE_DIR . 'images/auction/' . $row['auction_id']), array('..', '.')))[0];
+        }else $row['photo'] = 'images/item-prev.jpg';
+        $auctions[] = $row;
+    }
+
+
+    return $auctions;
 }
 function getAuctionBuyer($userId){
     global $conn;
@@ -75,7 +83,7 @@ function getAuctionSeller($storeId){
 
 function viewIndex()
 {
-    global $conn;
+    global $conn, $BASE_DIR;
 
     // WHERE state = "active"
     $stmt = $conn->prepare("SELECT * FROM auction_view ORDER BY page_rank DESC LIMIT ?   ");
@@ -83,6 +91,9 @@ function viewIndex()
     $auctions = null;
     while($row = $stmt->fetch() )
     {
+        if(file_exists($BASE_DIR . 'images/auction/' . $row['auction_id'])) {
+            $row['photo'] = 'images/auction/' . $row['auction_id'] . '/' .array_values(array_diff(scandir($BASE_DIR . 'images/auction/' . $row['auction_id']), array('..', '.')))[0];
+        }else $row['photo'] = 'images/item-prev.jpg';
         $auctions[] = $row;
     }
     return $auctions;
@@ -198,7 +209,7 @@ function getAuctionById($auctionId){
 
     $stmt->execute(array($auctionId));
 
-    return $stmt->fetchAll();
+    return $stmt->fetch();
 }
 function getAuctions(){
     global $conn;
