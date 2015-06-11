@@ -3,6 +3,7 @@ include_once('../../config/init.php');
 include_once("$BASE_DIR/shared/session.php");// base dir esta a ser declarado no init
 include_once("$BASE_DIR/database/users.php");// base dir esta a ser declarado no init
 include_once("$BASE_DIR/database/store.php");// base dir esta a ser declarado no init
+include_once("$BASE_DIR/database/msgconversation.php");// base dir esta a ser declarado no init
 
 $userId= isset($_GET['user']) ? $_GET["user"] :getUserId() ; // vai buscar o user
 

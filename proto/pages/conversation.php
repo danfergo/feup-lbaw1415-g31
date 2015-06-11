@@ -37,7 +37,7 @@ else
         die("1 nao existe store1 $userId");// TODO filizar se nao existe
     }
     $conversation=getConversationbyStoreUser($conversationId,$_GET['conversasion_user_id'],$store['store_id']);
-    var_dump($conversation);
+
 }
 
 $smarty->assign('conversation',$conversation);
